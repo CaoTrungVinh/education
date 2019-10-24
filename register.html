@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!--    chỉnh sửa-->
-    <!--    <link rel="stylesheet" href="stylecss/index.css">-->
+    <link rel="stylesheet" href="stylecss/index.css">
     <link rel="stylesheet" href="css/login.css">
 
 </head>
@@ -68,8 +68,8 @@
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <a class="navbar-brand logo_h" href="index.html">
 <!--                    <img src="img/logo.png" alt="">-->
-
-                    <img src="img/img_Nhom/logo1.png" height="40" width="140"/></a>
+                    <img src="img/img_Nhom/logo1.png" height="40" width="140"/>
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -116,24 +116,33 @@
         </nav>
     </div>
 </header>
-<div class="login">
+<div class="container login">
     <div class="form-structor">
-        <div class="login ">
-            <div class="center">
-                <h2 class="form-title" id="login">Email</h2>
-                <div class="alert alert-success">
-                </div>
-                <div class="alert alert-danger">
-                    <p></p>
-                </div>
-                <form method="post" action="forgetpass">
-                    <div class="form-holder">
-                        <input name="email" type="email" class="input" value="" placeholder="Email"/>
+
+        <form method="post">
+            <div class="signup">
+                <h2 class="form-title slide-up" id="signup" style="text-decoration: none; margin-top: 30px">Register </h2>
+<!--                <div class="alert alert-danger">-->
+
+<!--                </div>-->
+                <div class="form-holder">
+
+                    <input name="email" type="email" class="input" placeholder="Email"/>
+                    <input name="pass" type="password" class="input" placeholder="Password"/>
+                    <input name="repass" type="password" class="input" placeholder="Re-Password"/>
+                    <input name="name" type="text" class="input" placeholder="Name"/>
+                    <input name="phone" type="text" class="input" placeholder="Phone"/>
+
+                    <div class="input">
+                        <input type="radio" name="gender" value="Nam" id="nam"/> <label for="nam">Nam</label>
+                        <input type="radio" name="gender" value="Nữ" id="nu"/> <label for="nu">Nữ</label>
+
                     </div>
-                    <button class="submit-btn">Confirm</button>
-                </form>
+
+                </div>
+                <button class="submit-btn">Sign up</button>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 

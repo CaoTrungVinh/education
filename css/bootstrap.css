@@ -5166,9 +5166,9 @@ input[type=submit].btn-block {
 }
 
 .alert-secondary {
-    color: #383d41;
-    background-color: #e2e3e5;
-    border-color: #d6d8db
+    /*color: #383d41;*/
+    /*background-color: #e2e3e5;*/
+    /*border-color: #d6d8db*/
 }
 
 .alert-secondary hr {
@@ -5180,9 +5180,9 @@ input[type=submit].btn-block {
 }
 
 .alert-success {
-    color: #155724;
-    background-color: #d4edda;
-    border-color: #c3e6cb
+    /*color: #155724;*/
+    /*background-color: #d4edda;*/
+    /*border-color: #c3e6cb*/
 }
 
 .alert-success hr {
@@ -5222,9 +5222,9 @@ input[type=submit].btn-block {
 }
 
 .alert-danger {
-    color: #721c24;
-    background-color: #f8d7da;
-    border-color: #f5c6cb
+    /*color: #721c24;*/
+    /*background-color: #f8d7da;*/
+    /*border-color: #f5c6cb*/
 }
 
 .alert-danger hr {
