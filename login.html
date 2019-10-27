@@ -1,63 +1,189 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <script src="js/js.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <title>EduSmart Education</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="vendors/linericon/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+    <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+    <link rel="stylesheet" href="vendors/animate-css/animate.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--    chỉnh sửa-->
+    <!--    <link rel="stylesheet" href="stylecss/index.css">-->
     <link rel="stylesheet" href="css/login.css">
 
 </head>
+
 <body>
 
-<div class="form-structor">
-
-    <form method="post">
-        <div class="signup">
-            <a href="signup.html"style="text-decoration: none"  ><h2 class="form-title slide-up" id="signup" >Sign up </h2></a>
-
-            <div class="alert alert-danger">
-
-            </div>
-            <div class="form-holder">
-
-                <input name="email" type="email" class="input" placeholder="Email"/>
-                <input name="pass" type="password" class="input" placeholder="Password"/>
-                <input name="repass" type="password" class="input" placeholder="Re-Password"/>
-                <input name="name" type="text" class="input" placeholder="Name"/>
-                <input name="phone" type="text" class="input" placeholder="Phone"/>
-
-                <div class="input">
-                    <input type="radio" name="gender" value="Nam" id="nam"/> <label for="nam">Nam</label>
-                    <input type="radio" name="gender" value="Nữ" id="nu"/> <label for="nu">Nữ</label>
-
+<!--================ Start Header Menu Area =================-->
+<header class="header_area">
+    <div class="header-top">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-sm-6 col-4 header-top-left">
+                    <a href="tel:+9530123654896">
+                        <span class="lnr lnr-phone"></span>
+                        <span class="text">
+								<span class="text">(+84) 3012 3654 896</span>
+							</span>
+                    </a>
+                    <a href="mailto:support@colorlib.com">
+                        <span class="lnr lnr-envelope"></span>
+                        <span class="text">
+								<span class="text">hci2019Group09@hcmuaf.edu.vn</span>
+							</span>
+                    </a>
                 </div>
-
+                <div class="col-lg-6 col-sm-6 col-8 header-top-right">
+                    <a href="login.html" class="text-uppercase">Login</a>
+                </div>
             </div>
-            <button class="submit-btn">Sign up</button>
         </div>
-    </form>
-    <div class="login ">
-        <div class="center">
-            <h2 class="form-title" id="login">Log in</h2>
-            <div class="alert alert-success">
-            </div>
-            <div class="alert alert-danger">
+    </div>
 
+    <div class="main_menu">
+        <div class="search_input" id="search_input_box">
+            <div class="container">
+                <form class="d-flex justify-content-between" method="" action="">
+                    <input type="text" class="form-control" id="search_input" placeholder="Search Here">
+                    <button type="submit" class="btn"></button>
+                    <span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
+                </form>
             </div>
-            <form method="post">
-                <div class="form-holder">
+        </div>
 
-                    <input type="email" name="email" class="input" value="" placeholder="Email"/>
-                    <input type="password" name="pass" class="input" placeholder="Password"/>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <a class="navbar-brand logo_h" href="index.html">
+<!--                    <img src="img/logo.png" alt="">-->
+
+                    <img src="img/img_Nhom/logo1.png" height="40" width="140"/></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav menu_nav ml-auto">
+                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item submenu dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true"
+                               aria-expanded="false">Study</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="#">Listening</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Speaking</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="#">Read</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Grammar</a></li>
+                            </ul>
+                        </li>
+                        <!--                        <li class="nav-item submenu dropdown">-->
+                        <!--                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"-->
+                        <!--                               aria-haspopup="true"-->
+                        <!--                               aria-expanded="false">Tests</a>-->
+                        <!--                            <ul class="dropdown-menu">-->
+                        <!--                                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>-->
+                        <!--                                <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>-->
+                        <!--                            </ul>-->
+                        <!--                        </li>-->
+                        <li class="nav-item"><a class="nav-link" href="#">Tests</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Game</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link search" id="search">
+                                <i class="lnr lnr-magnifier"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="container login">
+    <div class="form-structor">
+        <h2 class="form-title" id="login" style="text-align: center; margin-top: 25px; color: white">Log in</h2>
+        <div class="login">
+            <div class="center">
+                <div class="alert alert-success">
+                </div>
+                <div class="alert alert-danger">
 
                 </div>
+                <form method="post">
+                    <div class="form-holder">
 
-                <button class="submit-btn">Log in</button>
-                <a href="forget.html"style="text-decoration: none; float: right " >Forget Password</a>
-            </form>
+                        <input type="email" name="email" class="input" value="" placeholder="Email"/>
+                        <input type="password" name="pass" class="input" placeholder="Password"/>
+
+                    </div>
+                    <a href="forget.html" style="text-decoration: none; float: right;font-size: 14px;margin: 10px ">Forget Password</a>
+
+                    <button class="submit-btn">Log in</button>
+                    <div style="display: flex; font-size: 12px;justify-content: space-between">
+                        <span>Dont have an account yet?</span>
+                        <a href="register.html">Register Now!</a>
+                    </div>
+
+                </form>
+            </div>
         </div>
     </div>
 </div>
+
+
+<!--================ Start Home Banner Area =================-->
+<div class="popular_courses lite_bg">
+    <footer class="footer-area section_gap">
+        <div class="container">
+            <div class="row footer-bottom d-flex justify-content-between">
+                <p class="col-lg-8 col-sm-12 footer-text m-0 text-white" style="padding-top: 10px">Copyright © 2018 All
+                    rights reserved | This
+                    template is
+                    made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#">Hci2019Group09</a></p>
+                <div class="col-lg-4 col-sm-12 footer-social">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                    <a href="#"><i class="fa fa-behance"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/stellar.js"></script>
+<script src="js/countdown.js"></script>
+<script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+<script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="js/owl-carousel-thumb.min.js"></script>
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="vendors/counter-up/jquery.counterup.js"></script>
+<script src="js/mail-script.js"></script>
+<!--gmaps Js-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+<script src="js/gmaps.min.js"></script>
+<script src="js/theme.js"></script>
 </body>
+
 </html>
