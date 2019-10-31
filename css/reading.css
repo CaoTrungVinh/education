@@ -1,0 +1,561 @@
+.concept {
+    padding: 20px;
+}
+
+.padd {
+    padding-right: 0px;
+}
+
+.a {
+    font-size: 20px;
+    color: blue !important;
+}
+
+.seemore {
+    display: inline-block;
+    background-color: #00843d;
+    color: #fff !important;
+    font-size: 14px;
+    padding: 5px 20px 5px 20px;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+}
+
+.seemore:hover {
+    font-size: 16px;
+    color: #fff !important;
+}
+
+.a:hover {
+    font-size: 25px;
+    color: #005cbf !important;
+    text-decoration: #005cbf;
+}
+
+.text {
+    font-size: 14px;
+    line-height: 12px;
+}
+
+
+.sidebars {
+    float: left;
+    width: 34%;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebars {
+        width: 100%;
+    }
+}
+
+.sidebars .sidebar > .block {
+    margin-bottom: 1em;
+}
+
+.sidebars .item-list {
+    font-size: 14px;
+}
+
+.sidebars .item-list ul {
+    padding-left: 25px;
+}
+
+.sidebars #views-exposed-form-glossary-block-1 {
+    display: none;
+}
+
+.sidebars h2 {
+    color: #037739;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 21px;
+    padding: 10px 12px;
+    background-color: #f4f4f4;
+    margin: 0px !important;
+}
+
+.sidebars .pager .pager-previous {
+    float: left;
+}
+
+.sidebars .pager .pager-current {
+    border-bottom: none;
+    background-color: transparent;
+    color: #000000;
+    font-size: 11px;
+}
+
+.sidebars .pager .pager-next {
+    margin-right: 0;
+    position: static;
+    float: right;
+}
+
+.sidebars .pager .ajax-progress {
+    display: none;
+}
+
+.sidebars .region-sidebar-second {
+    margin: 0 !important;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sidebars .region-sidebar-second .block-image img {
+    width: 100%;
+}
+
+.sidebars div[id*="block-views-taxonomy-blocks"] {
+    background-color: #00843d;
+    margin: 0 !important;
+    padding: 8px 8px 8px 15px;
+    color: #fff;
+}
+
+.sidebars div[id*="block-views-taxonomy-blocks"] a {
+    display: block;
+    font-size: 16px;
+    padding-left: 24px;
+    position: relative;
+}
+
+.sidebars div[id*="block-views-taxonomy-blocks"] a:hover {
+    text-decoration: underline;
+}
+
+.sidebars div[id*="block-views-taxonomy-blocks"] a:before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: url(/sites/podcasts/themes/le7/images/right-arrow-button.svg) left center no-repeat;
+    background-size: 16px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+.sidebars .block-menu-block {
+    background: #f4f4f4;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.sidebars .block-menu-block .menu-block-wrapper > ul.menu {
+    padding: 0;
+    font-size: 15px;
+}
+
+.sidebars .block-menu-block .menu-block-wrapper > ul.menu > li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.sidebars .block-menu-block .menu-block-wrapper > ul.menu > li a:hover {
+    text-decoration: underline;
+}
+
+.sidebars .block-menu-block .menu-block-wrapper > ul.menu > li.is-active-trail > a {
+    display: block;
+    color: #00843d;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.sidebars .block-menu-block .menu-block-wrapper > ul.menu > li:last-child {
+    border: 0;
+    padding-bottom: 0;
+}
+
+.sidebars .block-menu-block .menu-block-wrapper > ul.menu > li > ul {
+    padding: 0;
+}
+
+.sidebars .block-menu-block .menu-block-wrapper > ul.menu > li > ul li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+
+.sidebars .block-menu-block .menu-block-wrapper > ul.menu > li > ul li a:hover {
+    text-decoration: underline;
+    font-size: 20px !important;
+}
+
+.sidebars .letter-menu-block {
+    background-color: #f4f4f4;
+    border-top: 3px solid #00843d;
+    padding-bottom: 10px;
+}
+
+.sidebars .letter-menu-block .attachment .view-content {
+    border-top: 1px solid #b0b0b0;
+    border-bottom: 1px solid #b0b0b0;
+    padding: 4px 10px;
+    overflow: auto;
+}
+
+.sidebars .letter-menu-block .attachment .view-content .views-summary a {
+    display: block;
+    float: left;
+    color: #000000;
+    width: 23px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.sidebars .letter-menu-block .attachment .view-content .views-summary a:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.sidebars .letter-menu-block .attachment .view-content .ajax-progress {
+    display: none;
+}
+
+.sidebars .letter-menu-block table.views-table {
+    margin: 0;
+    width: 100%;
+}
+
+.sidebars .letter-menu-block table.views-table th {
+    text-align: left;
+    padding: 4px 15px;
+}
+
+.sidebars .letter-menu-block table.views-table td {
+    padding: 2px 15px;
+}
+
+.sidebars .letter-menu-block table.views-table tr, .sidebars .letter-menu-block table.views-table td.active {
+    border: none;
+    background-color: transparent;
+}
+
+.sidebars .letter-menu-block table.views-table td:hover {
+    background-color: #676767;
+    color: #ffffff;
+}
+
+.sidebars .letter-menu-block table.views-table tbody {
+    font-size: 13px;
+}
+
+.sidebars .popular-block {
+    background-color: #f4f4f4;
+    border-top: 3px solid #00843d;
+}
+
+.sidebars .popular-block .view-content .views-row {
+    font-family: 'arial';
+    font-size: 12px;
+    padding: 8px 12px 8px 35px;
+    border-top: 1px solid #b0b0b0;
+    line-height: 18px;
+    position: relative;
+}
+
+.sidebars .popular-block .view-content .views-row .views-field-comment-count {
+    color: #acacac;
+    margin-right: 10px;
+    display: none;
+}
+
+.sidebars .popular-block .view-content .views-row .views-field-comment-count:before {
+    content: url(/sites/podcasts/themes/le7/images/icon-talk.png);
+}
+
+.sidebars .popular-block .view-content .views-row:hover .views-field-comment-count {
+    display: inline;
+}
+
+.sidebars .popular-block .view-content .views-row:before {
+    font-family: 'Times New Roman';
+    color: #b3b3b3;
+    font-size: 24px;
+    font-family: 'british_council-bold';
+    font-style: italic;
+    position: absolute;
+    left: 12px;
+}
+
+.sidebars .popular-block .view-content .views-row:nth-child(1):before {
+    content: "1";
+}
+
+.sidebars .popular-block .view-content .views-row:nth-child(2):before {
+    content: "2";
+}
+
+.sidebars .popular-block .view-content .views-row:nth-child(3):before {
+    content: "3";
+}
+
+.sidebars .popular-block .view-content .views-row:nth-child(4):before {
+    content: "4";
+}
+
+.sidebars .popular-block .view-content .views-row:nth-child(5):before {
+    content: "5";
+}
+
+.sidebars .country-select-block {
+    background-color: #00843d;
+    padding: 14px 8px;
+}
+
+.sidebars .country-select-block h2 {
+    padding: 0;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 15px;
+    font-family: 'british_council-bold';
+}
+
+.sidebars .country-select-block .form-item {
+    margin: 0;
+}
+
+.sidebars .country-select-block select {
+    width: 100%;
+    margin-top: 8px;
+    padding: 2px;
+    font-size: 12px;
+}
+
+.sidebars .help_support, .sidebars .dictionaries_block {
+    border-bottom: 1px solid #4c4c4c;
+    color: #ffffff;
+    padding: 18px 0;
+}
+
+.sidebars .help_support h2, .sidebars .dictionaries_block h2 {
+    font-size: 17px;
+    line-height: 18px;
+    padding-left: 0;
+    padding-right: 0;
+    background: #333333 url(/sites/podcasts/themes/le7/images/icon-i.png) 10px 12px no-repeat;
+    color: #ffffff;
+    padding: 10px 20px 10px 30px;
+    text-decoration: none;
+    font-family: british_council-bold;
+    text-transform: uppercase;
+}
+
+.sidebars .help_support ul, .sidebars .dictionaries_block ul {
+    font-size: 14px;
+    line-height: 26px;
+    color: #000000;
+    border: 1px solid #333333;
+    padding: 5px 35px;
+    background-color: #ebeff0;
+}
+
+.sidebars .help_support ul li, .sidebars .dictionaries_block ul li {
+    list-style-type: none;
+    list-style-image: none;
+}
+
+.sidebars .help_support ul li:before, .sidebars .dictionaries_block ul li:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 7px solid #00843d;
+    position: absolute;
+    margin-left: -15px;
+    margin-top: 8px;
+}
+
+.sidebars .help_support ul a:hover, .sidebars .dictionaries_block ul a:hover {
+    text-decoration: underline;
+}
+
+.sidebars .dictionaries_block {
+    background: url(/sites/podcasts/themes/le7/images/icon-dict.png) 10px 5px no-repeat;
+    background-color: #333333;
+    border: none;
+}
+
+.sidebars .dictionaries_block form {
+    margin: 10px 0;
+}
+
+.sidebars .dictionaries_block form .form-item {
+    width: 180px;
+    margin: 0 5px 0 0;
+    float: left;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebars .dictionaries_block form .form-item {
+        width: 130px;
+    }
+}
+
+.sidebars .dictionaries_block form .form-item input {
+    width: 100%;
+    border-radius: 2px 2px 2px 2px;
+    -moz-border-radius: 2px 2px 2px 2px;
+    -webkit-border-radius: 2px 2px 2px 2px;
+    -khtml-border-radius: 2px 2px 2px 2px;
+}
+
+.sidebars .dictionaries_block form input[type=submit] {
+    color: #ffffff;
+    font-size: 12px;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 2px 2px 2px 2px;
+    -moz-border-radius: 2px 2px 2px 2px;
+    -webkit-border-radius: 2px 2px 2px 2px;
+    -khtml-border-radius: 2px 2px 2px 2px;
+    background: #00a349;
+    background: -moz-linear-gradient(top, #00a349 0%, #00843e 72%, #00843e 100%);
+    background: -webkit-linear-gradient(top, #00a349 0%, #00843e 72%, #00843e 100%);
+    background: -o-linear-gradient(top, #00a349 0%, #00843e 72%, #00843e 100%);
+    background: -ms-linear-gradient(top, #00a349 0%, #00843e 72%, #00843e 100%);
+    background: linear-gradient(to bottom, #00a349 0%, #00843e 72%, #00843e 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00a349', endColorstr='#00843e', GradientType=0);
+}
+
+.sidebars .sidebar-course-block .view-content > .views-row {
+    position: relative;
+}
+
+.sidebars .sidebar-course-block .views-field-title {
+    position: absolute;
+    top: 12px;
+    font-size: 11px;
+    color: #ffffff;
+    background-color: #006ec7;
+    padding: 0 10px;
+}
+
+.sidebars .sidebar-course-block .views-field-field-site-structure {
+    position: absolute;
+    z-index: 2;
+    color: #ffffff;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    padding: 2px 8px;
+    background: url(/sites/podcasts/themes/le7/images/trans_bg.png);
+    font-size: 14px;
+    font-family: "british_council-bold";
+}
+
+.sidebars .sidebar-course-block .views-field-field-image img {
+    width: 328px;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebars .sidebar-course-block .views-field-field-image img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.sidebars .normal-block {
+    border-top: 1px solid #dbdbdb;
+    font-size: 13px;
+    padding: 10px 12px;
+    background-color: #f4f4f4;
+}
+
+.sidebars .sidebar-book-navigation > .menu {
+    padding-left: 0;
+    font-size: 12px;
+    list-style-type: none;
+}
+
+.sidebars .sidebar-book-navigation > .menu > li {
+    list-style-image: none;
+    border-top: 1px solid #dbdbdb;
+}
+
+.sidebars .sidebar-book-navigation > .menu > li > a {
+    padding: 5px 12px;
+    background-color: #f4f4f4;
+    display: block;
+}
+
+.sidebars .sidebar-book-navigation > .menu > li > .menu {
+    background-color: #e8f0d8;
+    padding: 5px 12px 5px 27px;
+    color: #037739;
+}
+
+.sidebars .sidebar-book-navigation > .menu > li .is-active-trail > a {
+    color: #000000;
+}
+
+.sidebars .sidebar-book-navigation > .menu > li.active-trail > a {
+    background-color: #00843d;
+    color: #ffffff;
+}
+
+.sidebars .course_two {
+    color: #ffffff;
+    padding: 18px 0;
+    font-size: 14px;
+    line-height: normal;
+}
+
+.sidebars .course_two h2 {
+    padding-left: 0;
+    padding-right: 0;
+    color: #02c15a;
+    background: #333333 url(/sites/podcasts/themes/le7/images/icon-hat.svg) 10px 12px no-repeat;
+    color: #ffffff;
+    padding: 10px 20px 10px 40px;
+    text-decoration: none;
+    font-family: british_council-bold;
+    text-transform: uppercase;
+}
+
+.sidebars .course_two > p {
+    background-color: #333333;
+    padding: 10px 15px;
+}
+
+.sidebars .course_two p {
+    margin: 0;
+}
+
+.sidebars .course_two ul {
+    margin: 0;
+    color: #000000;
+    border: 1px solid #333333;
+    padding: 5px 35px;
+    background-color: #ebeff0;
+}
+
+.sidebars .course_two ul li {
+    list-style-image: none;
+    list-style-type: none;
+    line-height: 1.5em;
+}
+
+.sidebars .course_two ul li:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 7px solid #00843d;
+    position: absolute;
+    margin-left: -15px;
+    margin-top: 6px;
+}
+
+.sidebars .course_two ul a:hover {
+    text-decoration: underline;
+}
