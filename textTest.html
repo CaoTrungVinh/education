@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <title>EduSmart Education</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="vendors/linericon/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+    <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+    <link rel="stylesheet" href="vendors/animate-css/animate.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--    chỉnh sửa-->
+    <link rel="stylesheet" href="stylecss/text.css">
+
+
+
+    <base/>
+    <link rel="stylesheet" href="template/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="template/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="template/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="common/css/custom-tests.css">
+    <style>
+        @media print {
+            .no_print {
+                display: none;
+            }
+
+            .guess {
+                border: none;
+                font-weight: bold;
+            }
+
+            .for_print {
+                display: normal;
+            }
+        }
+
+        @media screen {
+            .for_print {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            .table-container {
+                max-height: 300px;
+                margin: 0;
+                overflow-y: auto;
+            }
+
+            .table-scrollable {
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        .jumbotron {
+            color: #CA5C51;
+            background: white;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .words {
+            margin-bottom: 2px;
+            margin-right: 4px;
+            margin-top: 2px;
+            border-color: #226882;
+        }
+
+        .guess {
+            width: 80px;
+            border-radius: 3px;
+            border-color: #808080;
+            border-width: 1px;
+            text-align: center;
+        }
+
+        .reveal {
+            color: #408080;
+            width: 25px;
+            text-align: center;
+        }
+
+        .footer {
+            font-size: smaller;
+            text-align: center;
+            font-family: Verdana;
+            color: black;
+            background-color: #f7f7f7;
+        }
+
+        #switchlang {
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        .user {
+            direction: ltr;
+        }
+
+        .learn {
+            direction: ltr;
+        }
+    </style>
+
+</head>
+
+
+<body>
+<!--================ Start Header Menu Area =================-->
+<header class="header_area">
+    <div class="header-top">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-sm-6 col-4 header-top-left">
+                    <a href="tel:+9530123654896">
+                        <span class="lnr lnr-phone"></span>
+                        <span class="text">
+								<span style="font-size: 11px" class="text">(+84) 3012 3654 896</span>
+							</span>
+                    </a>
+                    <a href="mailto:support@colorlib.com">
+                        <span class="lnr lnr-envelope"></span>
+                        <span class="text">
+								<span style="font-size: 11px" class="text">hci2019Group09@hcmuaf.edu.vn</span>
+							</span>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-sm-6 col-8 header-top-right">
+                    <a href="login.html" class="text-uppercase">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main_menu" style="margin-top: -1.5%">
+        <div class="search_input" id="search_input_box">
+            <div class="container">
+                <form class="d-flex justify-content-between" method="" action="">
+                    <input type="text" class="form-control" id="search_input" placeholder="Search Here">
+                    <button type="submit" class="btn"></button>
+                    <span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
+                </form>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <a class="navbar-brand logo_h" href="index.html">
+                    <!--                    <img src="img/logo.png" alt="">-->
+
+                    <img src="img/img_Nhom/logo1.png" height="40" width="140"/></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav menu_nav ml-auto fix_menu">
+                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item submenu dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true"
+                               aria-expanded="false">Study</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="vocabulary.html">Vocabulary</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Grammar</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Listening</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Speaking</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Reading</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Writing</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="tests.html">Tests</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Game</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link search" id="search">
+                                <i class="lnr lnr-magnifier"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<!--================ End Header Menu Area =================-->
+<div style="background: #F9F9F9; margin-top: -20px" class="body">
+    <div role="main" class="main">
+        <div class="container">
+
+            <div class="langselectmobile text-center no_print">
+                <div class="col-md-12" style="margin-top:20px;margin-bottom:10px;">
+                    <nav>
+                        <ul class="nav nav-pills" id="mainNav1">
+                            <li class="dropdown dropdown-mega">
+                                <a href="#" class="dropdown-toggle" href="#">
+                                    <div class="flag-en"></div>
+                                    English UK
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <div class="dropdown-mega-content">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <ul class="dropdown-mega-sub-nav">
+                                                        <li><a href="../../../../ar/es/1/easy/index.html">
+                                                            <div class="flag-ar"></div> &nbsp;<strong>AR</strong>
+                                                            العربية</a></li>
+                                                        <li><a href="../../../../bg/es/1/easy/index.html">
+                                                            <div class="flag-bg"></div> &nbsp;<strong>BG</strong>
+                                                            български</a></li>
+                                                        <li><a href="../../../../bs/es/1/easy/index.html">
+                                                            <div class="flag-bs"></div> &nbsp;<strong>BS</strong>
+                                                            bosanski</a></li>
+                                                        <li><a href="../../../../cs/es/1/easy/index.html">
+                                                            <div class="flag-cs"></div> &nbsp;<strong>CS</strong>
+                                                            čeština</a></li>
+                                                        <li><a href="../../../../da/es/1/easy/index.html">
+                                                            <div class="flag-da"></div> &nbsp;<strong>DA</strong> dansk</a>
+                                                        </li>
+                                                        <li><a href="../../../../de/es/1/easy/index.html">
+                                                            <div class="flag-de"></div> &nbsp;<strong>DE</strong>
+                                                            Deutsch</a></li>
+                                                        <li><a href="../../../../el/es/1/easy/index.html">
+                                                            <div class="flag-el"></div> &nbsp;<strong>EL</strong>
+                                                            ελληνικά</a></li>
+                                                        <li><a href="../../../../em/es/1/easy/index.html">
+                                                            <div class="flag-em"></div> &nbsp;<strong>EM</strong>
+                                                            English US</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <ul class="dropdown-mega-sub-nav">
+                                                        <li><a href="../../../../et/es/1/easy/index.html">
+                                                            <div class="flag-et"></div> &nbsp;<strong>ET</strong> eesti</a>
+                                                        </li>
+                                                        <li><a href="../../../../fi/es/1/easy/index.html">
+                                                            <div class="flag-fi"></div> &nbsp;<strong>FI</strong> suomi</a>
+                                                        </li>
+                                                        <li><a href="../../../../fr/es/1/easy/index.html">
+                                                            <div class="flag-fr"></div> &nbsp;<strong>FR</strong>
+                                                            français</a></li>
+                                                        <li><a href="../../../../hr/es/1/easy/index.html">
+                                                            <div class="flag-hr"></div> &nbsp;<strong>HR</strong>
+                                                            hrvatski</a></li>
+                                                        <li><a href="../../../../hu/es/1/easy/index.html">
+                                                            <div class="flag-hu"></div> &nbsp;<strong>HU</strong> magyar</a>
+                                                        </li>
+                                                        <li><a href="../../../../id/es/1/easy/index.html">
+                                                            <div class="flag-id"></div> &nbsp;<strong>ID</strong> bahasa
+                                                            Indonesia</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <ul class="dropdown-mega-sub-nav">
+                                                        <li><a href="../../../../it/es/1/easy/index.html">
+                                                            <div class="flag-it"></div> &nbsp;<strong>IT</strong>
+                                                            italiano</a></li>
+                                                        <li><a href="../../../../ja/es/1/easy/index.html">
+                                                            <div class="flag-ja"></div> &nbsp;<strong>JA</strong>
+                                                            日本語</a></li>
+                                                        <li><a href="../../../../nl/es/1/easy/index.html">
+                                                            <div class="flag-nl"></div> &nbsp;<strong>NL</strong>
+                                                            Nederlands</a></li>
+                                                        <li><a href="../../../../nn/es/1/easy/index.html">
+                                                            <div class="flag-nn"></div> &nbsp;<strong>NN</strong>
+                                                            Nynorsk</a></li>
+                                                        <li><a href="../../../../no/es/1/easy/index.html">
+                                                            <div class="flag-no"></div> &nbsp;<strong>NO</strong> norsk</a>
+                                                        </li>
+                                                        <li><a href="../../../../pl/es/1/easy/index.html">
+                                                            <div class="flag-pl"></div> &nbsp;<strong>PL</strong> polski</a>
+                                                        </li>
+                                                        <li><a href="../../../../pt/es/1/easy/index.html">
+                                                            <div class="flag-pt"></div> &nbsp;<strong>PT</strong>
+                                                            português PT</a></li>
+                                                        <li><a href="../../../../ro/es/1/easy/index.html">
+                                                            <div class="flag-ro"></div> &nbsp;<strong>RO</strong> română</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <ul class="dropdown-mega-sub-nav">
+                                                        <li><a href="../../../../ru/es/1/easy/index.html">
+                                                            <div class="flag-ru"></div> &nbsp;<strong>RU</strong>
+                                                            русский</a></li>
+                                                        <li><a href="../../../../sr/es/1/easy/index.html">
+                                                            <div class="flag-sr"></div> &nbsp;<strong>SR</strong> српски</a>
+                                                        </li>
+                                                        <li><a href="../../../../sv/es/1/easy/index.html">
+                                                            <div class="flag-sv"></div> &nbsp;<strong>SV</strong>
+                                                            svenska</a></li>
+                                                        <li><a href="../../../../th/es/1/easy/index.html">
+                                                            <div class="flag-th"></div> &nbsp;<strong>TH</strong>
+                                                            ภาษาไทย</a></li>
+                                                        <li><a href="../../../../tr/es/1/easy/index.html">
+                                                            <div class="flag-tr"></div> &nbsp;<strong>TR</strong> Türkçe</a>
+                                                        </li>
+                                                        <li><a href="../../../../zh/es/1/easy/index.html">
+                                                            <div class="flag-zh"></div> &nbsp;<strong>ZH</strong> 中文</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="../../../../es/en/1/easy/index.html"><i class="fa fa-caret-left"></i><i
+                                    class="fa fa-caret-right"></i></a></li>
+                            <li class="dropdown dropdown-mega">
+                                <a href="#" class="dropdown-toggle" href="#">
+                                    <div class="flag-es"></div>
+                                    español
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <div class="dropdown-mega-content">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <ul class="dropdown-mega-sub-nav">
+                                                        <li><a href="../../../ar/1/easy/index.html">
+                                                            <div class="flag-ar"></div> &nbsp;<strong>AR</strong>
+                                                            العربية</a></li>
+                                                        <li><a href="../../../bg/1/easy/index.html">
+                                                            <div class="flag-bg"></div> &nbsp;<strong>BG</strong>
+                                                            български</a></li>
+                                                        <li><a href="../../../bs/1/easy/index.html">
+                                                            <div class="flag-bs"></div> &nbsp;<strong>BS</strong>
+                                                            bosanski</a></li>
+                                                        <li><a href="../../../cs/1/easy/index.html">
+                                                            <div class="flag-cs"></div> &nbsp;<strong>CS</strong>
+                                                            čeština</a></li>
+                                                        <li><a href="../../../da/1/easy/index.html">
+                                                            <div class="flag-da"></div> &nbsp;<strong>DA</strong> dansk</a>
+                                                        </li>
+                                                        <li><a href="../../../de/1/easy/index.html">
+                                                            <div class="flag-de"></div> &nbsp;<strong>DE</strong>
+                                                            Deutsch</a></li>
+                                                        <li><a href="../../../el/1/easy/index.html">
+                                                            <div class="flag-el"></div> &nbsp;<strong>EL</strong>
+                                                            ελληνικά</a></li>
+                                                        <li><a href="../../../em/1/easy/index.html">
+                                                            <div class="flag-em"></div> &nbsp;<strong>EM</strong>
+                                                            English US</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <ul class="dropdown-mega-sub-nav">
+                                                        <li><a href="../../../et/1/easy/index.html">
+                                                            <div class="flag-et"></div> &nbsp;<strong>ET</strong> eesti</a>
+                                                        </li>
+                                                        <li><a href="../../../fi/1/easy/index.html">
+                                                            <div class="flag-fi"></div> &nbsp;<strong>FI</strong> suomi</a>
+                                                        </li>
+                                                        <li><a href="../../../fr/1/easy/index.html">
+                                                            <div class="flag-fr"></div> &nbsp;<strong>FR</strong>
+                                                            français</a></li>
+                                                        <li><a href="../../../hr/1/easy/index.html">
+                                                            <div class="flag-hr"></div> &nbsp;<strong>HR</strong>
+                                                            hrvatski</a></li>
+                                                        <li><a href="../../../hu/1/easy/index.html">
+                                                            <div class="flag-hu"></div> &nbsp;<strong>HU</strong> magyar</a>
+                                                        </li>
+                                                        <li><a href="../../../id/1/easy/index.html">
+                                                            <div class="flag-id"></div> &nbsp;<strong>ID</strong> bahasa
+                                                            Indonesia</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <ul class="dropdown-mega-sub-nav">
+                                                        <li><a href="../../../it/1/easy/index.html">
+                                                            <div class="flag-it"></div> &nbsp;<strong>IT</strong>
+                                                            italiano</a></li>
+                                                        <li><a href="../../../ja/1/easy/index.html">
+                                                            <div class="flag-ja"></div> &nbsp;<strong>JA</strong>
+                                                            日本語</a></li>
+                                                        <li><a href="../../../nl/1/easy/index.html">
+                                                            <div class="flag-nl"></div> &nbsp;<strong>NL</strong>
+                                                            Nederlands</a></li>
+                                                        <li><a href="../../../nn/1/easy/index.html">
+                                                            <div class="flag-nn"></div> &nbsp;<strong>NN</strong>
+                                                            Nynorsk</a></li>
+                                                        <li><a href="../../../no/1/easy/index.html">
+                                                            <div class="flag-no"></div> &nbsp;<strong>NO</strong> norsk</a>
+                                                        </li>
+                                                        <li><a href="../../../pl/1/easy/index.html">
+                                                            <div class="flag-pl"></div> &nbsp;<strong>PL</strong> polski</a>
+                                                        </li>
+                                                        <li><a href="../../../pt/1/easy/index.html">
+                                                            <div class="flag-pt"></div> &nbsp;<strong>PT</strong>
+                                                            português PT</a></li>
+                                                        <li><a href="../../../ro/1/easy/index.html">
+                                                            <div class="flag-ro"></div> &nbsp;<strong>RO</strong> română</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <ul class="dropdown-mega-sub-nav">
+                                                        <li><a href="../../../ru/1/easy/index.html">
+                                                            <div class="flag-ru"></div> &nbsp;<strong>RU</strong>
+                                                            русский</a></li>
+                                                        <li><a href="../../../sr/1/easy/index.html">
+                                                            <div class="flag-sr"></div> &nbsp;<strong>SR</strong> српски</a>
+                                                        </li>
+                                                        <li><a href="../../../sv/1/easy/index.html">
+                                                            <div class="flag-sv"></div> &nbsp;<strong>SV</strong>
+                                                            svenska</a></li>
+                                                        <li><a href="../../../th/1/easy/index.html">
+                                                            <div class="flag-th"></div> &nbsp;<strong>TH</strong>
+                                                            ภาษาไทย</a></li>
+                                                        <li><a href="../../../tr/1/easy/index.html">
+                                                            <div class="flag-tr"></div> &nbsp;<strong>TR</strong> Türkçe</a>
+                                                        </li>
+                                                        <li><a href="../../../zh/1/easy/index.html">
+                                                            <div class="flag-zh"></div> &nbsp;<strong>ZH</strong> 中文</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="row no_print">
+                <div class="col-md-12" style="text-align:center;margin-top:20px;margin-bottom:10px;">
+                        <span style="font-weight:bold;color:#ca0101;font-size:20px;">
+                            <span style="display:block;font-size:30px;line-height:30px;">
+                                Test 1 </span>&nbsp;&nbsp;&nbsp;&nbsp;                                <a
+                                href="#"><button class="btn btn-primary"><i class="fa fa-arrow-left"></i> Prev</button></a>
+                                <a href="#"><button class="btn btn-primary">Next <i
+                                        class="fa fa-arrow-right"></i></button></a> |
+                                <form method="post" id="new_test" onsubmit="return CheckTestNumber();"
+                                      style="padding-top:10px;clear:none;display:inline;">
+                                    <span style="font-size:medium;"><label class="radio-inline"><input checked
+                                                                                                       onclick="CheckLevel(this,1)"
+                                                                                                       type="radio"
+                                                                                                       name="level"
+                                                                                                       value="1">Basic</label><label
+                                            class="radio-inline"><input onclick="CheckLevel(this,1)" type="radio"
+                                                                        name="level" value="2">Advanced</label></span>                            </span>
+                    |
+                    <div class="nobreak">
+                        Go to test: <input style="visibility: hidden; width: 1px;" type="text" name="learn_lang"
+                                           id="learn_lang" value="es"/>
+                        <input style="visibility: hidden; width: 1px;" type="text" name="test_numb" id="test_numb"
+                               value="1"/>
+                        <input type="text" id="s_numb" placeholder="# 1-100" required/>
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                        <input style="visibility: hidden; width: 1px;" type="text" name="user_lang" id="user_lang"
+                               value="en"/>
+
+                    </div>
+                    </form>
+                    <a href="javascript:randomize();" rel="nofollow">
+                        <button class="btn btn-primary"><i class="fa fa-refresh fa-lg"></i> Random</button>
+                    </a>
+                    <br/>
+                </div>
+            </div>
+
+
+            <button type="button" id="but_14" class="words btn btn-info" onclick="ClickedWord(14)">caliente</button>
+            <button type="button" id="but_6" class="words btn btn-info" onclick="ClickedWord(6)">clase</button>
+            <button type="button" id="but_12" class="words btn btn-info" onclick="ClickedWord(12)">coche</button>
+            <button type="button" id="but_7" class="words btn btn-info" onclick="ClickedWord(7)">Dónde</button>
+            <button type="button" id="but_13" class="words btn btn-info" onclick="ClickedWord(13)">el</button>
+            <button type="button" id="but_8" class="words btn btn-info" onclick="ClickedWord(8)">Ese</button>
+            <button type="button" id="but_4" class="words btn btn-info" onclick="ClickedWord(4)">febrero</button>
+            <button type="button" id="but_5" class="words btn btn-info" onclick="ClickedWord(5)">grande</button>
+            <button type="button" id="but_9" class="words btn btn-info" onclick="ClickedWord(9)">No</button>
+            <button type="button" id="but_11" class="words btn btn-info" onclick="ClickedWord(11)">pasaporte</button>
+            <button type="button" id="but_10" class="words btn btn-info" onclick="ClickedWord(10)">plano</button>
+            <button type="button" id="but_0" class="words btn btn-info" onclick="ClickedWord(0)">Se</button>
+            <button type="button" id="but_1" class="words btn btn-info" onclick="ClickedWord(1)">Su</button>
+            <button type="button" id="but_3" class="words btn btn-info" onclick="ClickedWord(3)">tomar</button>
+            <button type="button" id="but_2" class="words btn btn-info" onclick="ClickedWord(2)">Un</button>
+            <div class="table-container scrollable">
+                <table class="table table-hover table-striped table-condensed table-scrollable">
+                    <tbody style="font-weight: normal">
+                    <tr>
+                        <td>1.</td>
+                        <td class="user">Can one rent a boat here?</td>
+                        <td class="learn">¿ <input class="guess" id="inp_0" type="text" onclick="UpdateCurrentInput(0)"
+                                                   oninput="CheckWord(0)"/> pueden alquilar barcas aquí? &nbsp<a
+                                href="#" onclick="RevealLetter(0); return false;"><i
+                                class="no_print reveal fa fa-question-circle"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td class="user">Your pronunciation is very good.</td>
+                        <td class="learn"><input class="guess" id="inp_1" type="text" onclick="UpdateCurrentInput(1)"
+                                                 oninput="CheckWord(1)"/> pronunciación es muy buena. &nbsp<a href="#"
+                                                                                                              onclick="RevealLetter(1); return false;"><i
+                                class="no_print reveal fa fa-question-circle"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td class="user">a little patience</td>
+                        <td class="learn"><input class="guess" id="inp_2" type="text" onclick="UpdateCurrentInput(2)"
+                                                 oninput="CheckWord(2)"/> poco de paciencia &nbsp<a href="#"
+                                                                                                    onclick="RevealLetter(2); return false;"><i
+                                class="no_print reveal fa fa-question-circle"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td class="user">You can also take the tram.</td>
+                        <td class="learn">(Usted) también puede <input class="guess" id="inp_3" type="text"
+                                                                       onclick="UpdateCurrentInput(3)"
+                                                                       oninput="CheckWord(3)"/> el tranvía. &nbsp<a
+                                href="#" onclick="RevealLetter(3); return false;"><i
+                                class="no_print reveal fa fa-question-circle"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>5.</td>
+                        <td class="user">January, February, March,</td>
+                        <td class="learn">Enero, <input class="guess" id="inp_4" type="text"
+                                                        onclick="UpdateCurrentInput(4)" oninput="CheckWord(4)"/> ,
+                            marzo, &nbsp<a href="#" onclick="RevealLetter(4); return false;"><i
+                                    class="no_print reveal fa fa-question-circle"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>6.</td>
+                        <td class="user">You need a big suitcase!</td>
+                        <td class="learn">¡(Tú) necesitas una maleta <input class="guess" id="inp_5" type="text"
+                                                                            onclick="UpdateCurrentInput(5)"
+                                                                            oninput="CheckWord(5)"/> ! &nbsp<a href="#"
+                                                                                                               onclick="RevealLetter(5); return false;"><i
+                                class="no_print reveal fa fa-question-circle"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>7.</td>
+                        <td class="user">to be at school</td>
+                        <td class="learn">Estar en <input class="guess" id="inp_6" type="text"
+                                                          onclick="UpdateCurrentInput(6)" oninput="CheckWord(6)"/> &nbsp<a
+                                href="#" onclick="RevealLetter(6); return false;"><i
+                                class="no_print reveal fa fa-question-circle"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>8.</td>
+                        <td class="user">Where is the castle?</td>
+                        <td class="learn">¿ <input class="guess" id="inp_7" type="text" onclick="UpdateCurrentInput(7)"
+                                                   oninput="CheckWord(7)"/> está el castillo? &nbsp<a href="#"
+                                                                                                      onclick="RevealLetter(7); return false;"><i
+                                class="no_print reveal fa fa-question-circle"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>9.</td>
+                        <td class="user">I like that garden.</td>
+                        <td class="learn"><input class="guess" id="inp_8" type="text" onclick="UpdateCurrentInput(8)"
+                                                 oninput="CheckWord(8)"/> jardín me gusta. &nbsp<a href="#"
+                                                                                                   onclick="RevealLetter(8); return false;"><i
+                                class="no_print reveal fa fa-question-circle"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>10.</td>
+                        <td class="user">I'm just coming!</td>
+                        <td class="learn">¡Ya voy! / ¡ <input class="guess" id="inp_9" type="text"
+                                                              onclick="UpdateCurrentInput(9)" oninput="CheckWord(9)"/>
+                            tardaré en venir! / ¡Vengo enseguida (am.)! &nbsp<a href="#"
+                                                                                onclick="RevealLetter(9); return false;"><i
+                                    class="no_print reveal fa fa-question-circle"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>11.</td>
+                        <td class="user">I need a city map.</td>
+                        <td class="learn">Yo necesito un <input class="guess" id="inp_10" type="text"
+                                                                onclick="UpdateCurrentInput(10)"
+                                                                oninput="CheckWord(10)"/> de la ciudad. &nbsp<a href="#"
+                                                                                                                onclick="RevealLetter(10); return false;"><i
+                                class="no_print reveal fa fa-question-circle"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>12.</td>
+                        <td class="user">Don’t forget your passport!</td>
+                        <td class="learn">¡No olvides tu <input class="guess" id="inp_11" type="text"
+                                                                onclick="UpdateCurrentInput(11)"
+                                                                oninput="CheckWord(11)"/> ! &nbsp<a href="#"
+                                                                                                    onclick="RevealLetter(11); return false;"><i
+                                class="no_print reveal fa fa-question-circle"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>13.</td>
+                        <td class="user">I would like to rent a car.</td>
+                        <td class="learn">Me gustaría alquilar un <input class="guess" id="inp_12" type="text"
+                                                                         onclick="UpdateCurrentInput(12)"
+                                                                         oninput="CheckWord(12)"/> / un auto. &nbsp<a
+                                href="#" onclick="RevealLetter(12); return false;"><i
+                                class="no_print reveal fa fa-question-circle"></i></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row no_print">
+                <script async src="../../../../../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-9240635761824238"
+                     data-ad-slot="7018564889"
+                     data-ad-format="auto">
+                </ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+
+            </div>
+        </div>
+    </div>
+    <!-- Modal dialog box for invalid test numbers -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title text-danger">Invalid Test Number</h4>
+                </div>
+                <div class="modal-body text-info">
+                    <p>Test numbers are from 1 to 100.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--================ Start footer Area  =================-->
+<footer class="footer-area section_gap">
+    <div class="container">
+        <div class="row footer-bottom d-flex justify-content-between">
+            <p class="col-lg-8 col-sm-12 footer-text m-0 text-white" style="padding-top: 10px">Copyright © 2018 All rights reserved | This
+                template is
+                made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#">Hci2019Group09</a></p>
+            <div class="col-lg-4 col-sm-12 footer-social">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-dribbble"></i></a>
+                <a href="#"><i class="fa fa-behance"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--================ End footer Area  =================-->
+
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/stellar.js"></script>
+<script src="js/countdown.js"></script>
+<script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+<script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="js/owl-carousel-thumb.min.js"></script>
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="vendors/counter-up/jquery.counterup.js"></script>
+<script src="js/mail-script.js"></script>
+<!--gmaps Js-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+<script src="js/gmaps.min.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>

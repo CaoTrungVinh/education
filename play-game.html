@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <title>EduSmart Education</title>
+    <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="vendors/linericon/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+    <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+    <link rel="stylesheet" href="vendors/animate-css/animate.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--    chỉnh sửa-->
+    <link rel="stylesheet" href="stylecss/index.css">
+    <link rel="stylesheet" href="css/vocab.css">
+    <link rel="stylesheet" href="css/vocab-1.css">
+
+    <style>
+
+            .cardset {
+            position: relative;
+            margin: auto;
+            text-align: center;
+            width: 95%;
+        }
+
+        .card {
+            position: relative;
+            background-color: white;
+            padding-left: 0;
+            padding-right: 0;
+            cursor: pointer;
+        }
+
+        .front {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('img/game/50l-card.png');
+            background-size: cover;
+
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            -ms-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;
+        }
+
+        .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            background-color: #656565;
+            margin-top: 8%;
+            margin-left: 8%;
+            color: white;
+            text-align: center;
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            -ms-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;
+        }
+
+        .flipped {
+            opacity: 0;
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -ms-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+
+        .trlit {
+            color: rgb(226, 182, 29);
+        }
+
+        .learnlanglist {
+            background-color: none;
+        }
+
+        .buttonswitch {
+            background-color: #ca0101;
+            color: #fff;
+        }
+
+        .buttonswitch a:hover {
+            background-color: #ca0101;
+            color: #333;
+        }
+    </style>
+    <script type='text/javascript'>
+        var audioOn = true;
+        var cardNo = -1;
+        var lastInd = 0;
+        var thisInd = 0;
+        var lastObj;
+        var flipCount = 0;
+        var isFlipped = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        var matched = 0;
+        var trials = 0;
+        var failed = 0;
+
+        function updateProgress() {
+            document.getElementById("match").innerHTML = "<i class=\"fa fa-thumbs-o-up fa-lg\"></i> " + matched;
+            document.getElementById("match-pb").style.width = matched * 12.5 + '%';
+            document.getElementById("fail").innerHTML = "<i class=\"fa fa-thumbs-o-down fa-lg\"></i> " + failed;
+        }
+
+        function flipBack(thisCard, lastCard) {
+            //alert("this");
+            flip(thisCard, thisInd, false);
+            flip(lastCard, lastInd, false);
+            failed++;
+            flipCount -= 2;
+            cardNo = -1;
+            trials++;
+            updateProgress();
+        }
+
+        function transitionComplete(n) {
+            //this.removeEventListener("transitionend", transitionComplete);
+            var frontObj = document.getElementById("fr_" + n);
+            var id_str = new String(frontObj.id);
+            var id_val = parseInt(id_str.substr(3));
+            if (cardNo < 0) {
+                cardNo = id_val;
+                lastObj = this;
+            } else {
+                if (thisInd != lastInd) {
+                    // IE9.0 compatible
+                    setTimeout("flipBack(" + id_val + "," + cardNo + ")", 1000);
+                } else {
+                    matched++;
+                    flipCount -= 2;
+                    cardNo = -1;
+                    trials++;
+                    updateProgress();
+                }
+            }
+        }
+
+        function flip(n, ind, ev) {
+            var frontObj = document.getElementById("fr_" + n);
+            var backObj = document.getElementById("bk_" + n);
+            var audioObj = document.getElementById("au_" + n);
+            if (ev) {
+                if ((flipCount >= 2) || (isFlipped[n - 1])) {
+                    if (audioOn && isFlipped[n - 1])
+                        audioObj.play();
+                    return;
+                }
+                if (audioOn)
+                    audioObj.play();
+                isFlipped[n - 1] = true;
+                lastInd = thisInd;
+                thisInd = ind;
+                flipCount++;
+                //frontObj.addEventListener("transitionend", transitionComplete);
+                setTimeout("transitionComplete(" + n + ")", 1000);
+            } else {
+                isFlipped[n - 1] = false;
+            }
+
+            $(frontObj).toggleClass('flipped');
+            $(backObj).toggleClass('flipped');
+        }
+
+        function CheckCardNumber() {
+            var card_numb = document.getElementById("s_numb").value;
+            if ((card_numb < 1) || (card_numb > 42)) {
+                $("#dlg_warning").modal();
+                return false;
+            }
+            document.getElementById("card_numb").value = document.getElementById("s_numb").value;
+            return true;
+        }
+
+        function CheckLevel(obj, level) {
+            if (obj.value != level)
+                document.getElementById("new_card").submit();
+        }
+
+        function toggleAudio(obj) {
+            audioOn = !audioOn;
+            if (audioOn)
+                obj.innerHTML = '<i class="fa fa-volume-up fa-lg"></i> Audio on';
+            else
+                obj.innerHTML = '<i class="fa fa-volume-off fa-lg"></i> &nbsp; Audio off';
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+
+<!--================ Start Header Menu Area =================-->
+<header class="header_area">
+    <div class="header-top">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-sm-6 col-4 header-top-left">
+                    <a href="tel:+9530123654896">
+                        <span class="lnr lnr-phone"></span>
+                        <span class="text">
+								<span class="text">(+84) 3012 3654 896</span>
+							</span>
+                    </a>
+                    <a href="mailto:support@colorlib.com">
+                        <span class="lnr lnr-envelope"></span>
+                        <span class="text">
+								<span class="text">hci2019Group09@hcmuaf.edu.vn</span>
+							</span>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-sm-6 col-8 header-top-right">
+                    <a href="login.html" class="text-uppercase">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main_menu">
+        <div class="search_input" id="search_input_box">
+            <div class="container">
+                <form class="d-flex justify-content-between" method="" action="">
+                    <input type="text" class="form-control" id="search_input" placeholder="Search Here">
+                    <button type="submit" class="btn"></button>
+                    <span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
+                </form>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <a class="navbar-brand logo_h" href="index.html">
+                    <!--                    <img src="img/logo.png" alt="">-->
+                    <img src="img/img_Nhom/logo1.png" height="40" width="140"/>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav menu_nav ml-auto">
+                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item submenu dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true"
+                               aria-expanded="false">Study</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="vocabulary.html">Vocabulary</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Grammar</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Listening</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Speaking</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="reading.html">Reading</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Writing</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#">Tests</a></li>
+                        <li class="nav-item"><a class="nav-link" href="games.html">Games</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link search" id="search">
+                                <i class="lnr lnr-magnifier"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<div id="container">
+    <div id="vocab" style="width: 90%; margin: auto" class="row no_print">
+        <div class="container">
+            <div class="row no_print" style="margin-top:20px;">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-sm navbar-defaut">
+                        <div class="container-fluid">
+                            <ul class="nav navbar-nav nav-pills">
+                                <li style="border:none;">Choose Topic:</li>
+                                <li><a href="#" class="dropdown-menu-toggle" id="user_lang"
+                                       data-toggle="dropdown">ALL <i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu" style="margin-left: 135px">
+                                        <li>
+                                            <a>ALL</a>
+                                        </li>
+                                        <li><a href="memo/en/es/2/2">Animals</a></li>
+                                        <li><a href="memo/en/es/3/2">Sports</a></li>
+                                        <li><a href="memo/en/es/4/2">Music</a></li>
+                                        <li><a href="memo/en/es/5/2">Office</a></li>
+                                        <li><a href="memo/en/es/6/2">Beverages</a></li>
+                                        <li><a href="memo/en/es/7/2">People</a></li>
+                                        <li><a href="memo/en/es/8/2">Time</a></li>
+                                        <li><a href="memo/en/es/9/2">Environment</a></li>
+                                        <li><a href="memo/en/es/10/2">Packaging</a></li>
+                                        <li><a href="memo/en/es/11/2">Tools</a></li>
+                                        <li><a href="memo/en/es/12/2">Traffic</a></li>
+                                        <li><a href="memo/en/es/13/2">Fruits</a></li>
+                                        <li><a href="memo/en/es/14/2">Leisure</a></li>
+                                        <li><a href="memo/en/es/15/2">Military</a></li>
+                                        <li><a href="memo/en/es/16/2">Clothing</a></li>
+                                        <li><a href="memo/en/es/17/2">Communication</a></li>
+                                        <li><a href="memo/en/es/18/2">Technology</a></li>
+                                        <li><a href="memo/en/es/19/2">Apartment</a></li>
+                                        <li><a href="memo/en/es/20/2">Food</a></li>
+                                        <li><a href="memo/en/es/21/2">Occupations</a></li>
+                                        <li><a href="memo/en/es/22/2">Vegetables</a></li>
+                                        <li><a href="memo/en/es/23/2">Objects</a></li>
+                                        <li><a href="memo/en/es/24/2">Education</a></li>
+                                        <li><a href="memo/en/es/25/2">Body</a></li>
+                                        <li><a href="memo/en/es/26/2">Nature</a></li>
+                                        <li><a href="memo/en/es/27/2">Finances</a></li>
+                                        <li><a href="memo/en/es/28/2">Furniture</a></li>
+                                        <li><a href="memo/en/es/29/2">Religion</a></li>
+                                        <li><a href="memo/en/es/30/2">Plants</a></li>
+                                        <li><a href="memo/en/es/31/2">Abstract terms</a></li>
+                                        <li><a href="memo/en/es/32/2">Kitchen appliances</a></li>
+                                        <li><a href="memo/en/es/33/2">Materials</a></li>
+                                        <li><a href="memo/en/es/34/2">Health</a></li>
+                                        <li><a href="memo/en/es/35/2">Car</a></li>
+                                        <li><a href="memo/en/es/36/2">Arts</a></li>
+                                        <li><a href="memo/en/es/37/2">City</a></li>
+                                        <li><a href="memo/en/es/38/2">Weather</a></li>
+                                        <li><a href="memo/en/es/39/2">Shopping</a></li>
+                                        <li><a href="memo/en/es/40/2">Architecture</a></li>
+                                        <li><a href="memo/en/es/41/2">Big animals</a></li>
+                                        <li><a href="memo/en/es/42/2">Small animals</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#" onclick="return toggleAudio(this);"><i
+                                        class="fa fa-volume-up fa-lg"></i> Audio on</a></li>
+                                <li><a href="#" onclick="changeFontSize(-1); return false;"
+                                       style="font-size: smaller">A -</a></li>
+                                <li><a href="#" onclick="originalFontSize(); return false;"
+                                       style="font-size: medium">A</a></li>
+                                <li><a href="#" onclick="changeFontSize(1); return false;"
+                                       style="font-size:x-large">A+</a></li>
+                                <li><a href="#" style="font-size:x-large">A+</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+<div class="container">
+
+
+    <div class="no_print row" style="justify-content: center; padding: 20px">
+        <div class="col-xs-3 text-info text-right">
+            <h4 id="match"><i class="fa fa-thumbs-o-up fa-lg"></i> 0</h4>
+        </div>
+        <div class="col-xs-6" style="width: 50%">
+            <div class="progress" style="margin-top:4px;">
+                <div class="progress-bar" id="match-pb" role="progressbar"
+                     style="width:0%;background-color:green;">
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-3 text-danger text-left">
+            <h4 id="fail"><i class="fa fa-thumbs-o-down fa-lg"></i> 0</h4>
+        </div>
+    </div>
+
+    <div class="row cardset no_print">
+        <div class="col-xs-4 col-sm-2 card" onclick="flip(1,1412,true)">
+            <img class="img-responsive" src="https://www.50languages.com/common/images/50l-card-blank.png"
+                 alt="-"/>
+            <audio preload="auto" id="au_1">
+                <source src="https://www.goethe-verlag.com/book2/_alleima/_mp3/EN/1413.mp3" type="audio/mpeg">
+            </audio>
+            <div class="front" id="fr_1"></div>
+            <div class="back flipped" id="bk_1">
+                <img class="img-responsive center-block"
+                     src="https://www.50languages.com/common/images/vocab/0780.jpg" alt="-"/><span
+                    class="middle">playpen</span></div>
+        </div>
+        <div class="col-xs-4 col-sm-2 card" onclick="flip(2,1618,true)">
+            <img class="img-responsive" src="https://www.50languages.com/common/images/50l-card-blank.png"
+                 alt="-"/>
+            <audio preload="auto" id="au_2">
+                <source src="https://www.goethe-verlag.com/book2/_alleima/_mp3/UR/1619.mp3" type="audio/mpeg">
+            </audio>
+            <div class="front" id="fr_2"></div>
+            <div class="back flipped" id="bk_2">
+                <img class="img-responsive center-block"
+                     src="https://www.50languages.com/common/images/vocab/0738.jpg" alt="-"/><span
+                    class="middle">‫بیساکھی‬<br/><span class="small trlit">by̰sạḵھy̰</span></span></div>
+        </div>
+        <div class="col-xs-4 col-sm-2 card" onclick="flip(3,1618,true)">
+            <img class="img-responsive" src="https://www.50languages.com/common/images/50l-card-blank.png"
+                 alt="-"/>
+            <audio preload="auto" id="au_3">
+                <source src="https://www.goethe-verlag.com/book2/_alleima/_mp3/EN/1619.mp3" type="audio/mpeg">
+            </audio>
+            <div class="front" id="fr_3"></div>
+            <div class="back flipped" id="bk_3">
+                <img class="img-responsive center-block"
+                     src="https://www.50languages.com/common/images/vocab/0738.jpg" alt="-"/><span
+                    class="middle">crutch</span></div>
+        </div>
+        <div class="col-xs-4 col-sm-2 card" onclick="flip(4,648,true)">
+            <img class="img-responsive" src="https://www.50languages.com/common/images/50l-card-blank.png"
+                 alt="-"/>
+            <audio preload="auto" id="au_4">
+                <source src="https://www.goethe-verlag.com/book2/_alleima/_mp3/UR/0649.mp3" type="audio/mpeg">
+            </audio>
+            <div class="front" id="fr_4"></div>
+            <div class="back flipped" id="bk_4">
+                <img class="img-responsive center-block"
+                     src="https://www.50languages.com/common/images/vocab/1724.jpg" alt="-"/><span
+                    class="middle">‫فالتو وقت‬<br/><span class="small trlit">fạltw wqt</span></span></div>
+        </div>
+        <div class="col-xs-4 col-sm-2 card" onclick="flip(5,1035,true)">
+            <img class="img-responsive" src="https://www.50languages.com/common/images/50l-card-blank.png"
+                 alt="-"/>
+            <audio preload="auto" id="au_5">
+                <source src="https://www.goethe-verlag.com/book2/_alleima/_mp3/UR/1036.mp3" type="audio/mpeg">
+            </audio>
+            <div class="front" id="fr_5"></div>
+            <div class="back flipped" id="bk_5">
+                <img class="img-responsive center-block"
+                     src="https://www.50languages.com/common/images/vocab/1031.jpg" alt="-"/><span
+                    class="middle">‫پیزا‬<br/><span class="small trlit">py̰zạ</span></span></div>
+        </div>
+        <div class="col-xs-4 col-sm-2 card" onclick="flip(6,633,true)">
+            <img class="img-responsive" src="https://www.50languages.com/common/images/50l-card-blank.png"
+                 alt="-"/>
+            <audio preload="auto" id="au_6">
+                <source src="https://www.goethe-verlag.com/book2/_alleima/_mp3/EN/0634.mp3" type="audio/mpeg">
+            </audio>
+            <div class="front" id="fr_6"></div>
+            <div class="back flipped" id="bk_6">
+                <img class="img-responsive center-block"
+                     src="https://www.50languages.com/common/images/vocab/1850.jpg" alt="-"/><span
+                    class="middle">discotheque</span></div>
+        </div>
+        <div class="col-xs-4 col-sm-2 card" onclick="flip(7,1412,true)">
+            <img class="img-responsive" src="https://www.50languages.com/common/images/50l-card-blank.png"
+                 alt="-"/>
+            <audio preload="auto" id="au_7">
+                <source src="https://www.goethe-verlag.com/book2/_alleima/_mp3/UR/1413.mp3" type="audio/mpeg">
+            </audio>
+            <div class="front" id="fr_7"></div>
+            <div class="back flipped" id="bk_7">
+                <img class="img-responsive center-block"
+                     src="https://www.50languages.com/common/images/vocab/0780.jpg" alt="-"/><span
+                    class="middle">‫بچوں کے کھیلنے کا پلنگ‬<br/><span class="small trlit">bcẖwں ḵے ḵھy̰lnے ḵạ plng</span></span>
+            </div>
+        </div>
+        <div class="col-xs-4 col-sm-2 card" onclick="flip(8,398,true)">
+            <img class="img-responsive" src="https://www.50languages.com/common/images/50l-card-blank.png"
+                 alt="-"/>
+            <audio preload="auto" id="au_8">
+                <source src="https://www.goethe-verlag.com/book2/_alleima/_mp3/UR/0399.mp3" type="audio/mpeg">
+            </audio>
+            <div class="front" id="fr_8"></div>
+            <div class="back flipped" id="bk_8">
+                <img class="img-responsive center-block"
+                     src="https://www.50languages.com/common/images/vocab/0989.jpg" alt="-"/><span
+                    class="middle">‫گتہ‬<br/><span class="small trlit">gtہ</span></span></div>
+        </div>
+        <div class="col-xs-4 col-sm-2 card" onclick="flip(9,398,true)">
+            <img class="img-responsive" src="https://www.50languages.com/common/images/50l-card-blank.png"
+                 alt="-"/>
+            <audio preload="auto" id="au_9">
+                <source src="https://www.goethe-verlag.com/book2/_alleima/_mp3/EN/0399.mp3" type="audio/mpeg">
+            </audio>
+            <div class="front" id="fr_9"></div>
+            <div class="back flipped" id="bk_9">
+                <img class="img-responsive center-block"
+                     src="https://www.50languages.com/common/images/vocab/0989.jpg" alt="-"/><span
+                    class="middle">cardboard</span></div>
+        </div>
+        <div class="col-xs-4 col-sm-2 card" onclick="flip(10,107,true)">
+            <img class="img-responsive" src="https://www.50languages.com/common/images/50l-card-blank.png"
+                 alt="-"/>
+            <audio preload="auto" id="au_10">
+                <source src="https://www.goethe-verlag.com/book2/_alleima/_mp3/EN/0108.mp3" type="audio/mpeg">
+            </audio>
+            <div class="front" id="fr_10"></div>
+            <div class="back flipped" id="bk_10">
+                <img class="img-responsive center-block"
+                     src="https://www.50languages.com/common/images/vocab/0100.jpg" alt="-"/><span
+                    class="middle">baseball</span></div>
+        </div>
+        <div class="col-xs-4 col-sm-2 card" onclick="flip(11,107,true)">
+            <img class="img-responsive" src="https://www.50languages.com/common/images/50l-card-blank.png"
+                 alt="-"/>
+            <audio preload="auto" id="au_11">
+                <source src="https://www.goethe-verlag.com/book2/_alleima/_mp3/UR/0108.mp3" type="audio/mpeg">
+            </audio>
+            <div class="front" id="fr_11"></div>
+            <div class="back flipped" id="bk_11">
+                <img class="img-responsive center-block"
+                     src="https://www.50languages.com/common/images/vocab/0100.jpg" alt="-"/><span
+                    class="middle">‫بیس بال‬<br/><span class="small trlit">by̰s bạl</span></span></div>
+        </div>
+        <div class="col-xs-4 col-sm-2 card" onclick="flip(12,633,true)">
+            <img class="img-responsive" src="https://www.50languages.com/common/images/50l-card-blank.png"
+                 alt="-"/>
+            <audio preload="auto" id="au_12">
+                <source src="https://www.goethe-verlag.com/book2/_alleima/_mp3/UR/0634.mp3" type="audio/mpeg">
+            </audio>
+            <div class="front" id="fr_12"></div>
+            <div class="back flipped" id="bk_12">
+                <img class="img-responsive center-block"
+                     src="https://www.50languages.com/common/images/vocab/1850.jpg" alt="-"/><span
+                    class="middle">‫ڈسکو‬<br/><span class="small trlit">ڈsḵw</span></span></div>
+        </div>
+        <div class="col-xs-4 col-sm-2 card" onclick="flip(13,1057,true)">
+            <img class="img-responsive" src="https://www.50languages.com/common/images/50l-card-blank.png"
+                 alt="-"/>
+            <audio preload="auto" id="au_13">
+                <source src="https://www.goethe-verlag.com/book2/_alleima/_mp3/UR/1058.mp3" type="audio/mpeg">
+            </audio>
+            <div class="front" id="fr_13"></div>
+            <div class="back flipped" id="bk_13">
+                <img class="img-responsive center-block"
+                     src="https://www.50languages.com/common/images/vocab/1622.jpg" alt="-"/><span
+                    class="middle">‫شکر‬<br/><span class="small trlit">sẖḵr</span></span></div>
+        </div>
+        <div class="col-xs-4 col-sm-2 card" onclick="flip(14,920,true)">
+            <img class="img-responsive" src="https://www.50languages.com/common/images/50l-card-blank.png"
+                 alt="-"/>
+            <audio preload="auto" id="au_14">
+                <source src="https://www.goethe-verlag.com/book2/_alleima/_mp3/EN/0921.mp3" type="audio/mpeg">
+            </audio>
+            <div class="front" id="fr_14"></div>
+            <div class="back flipped" id="bk_14">
+                <img class="img-responsive center-block"
+                     src="https://www.50languages.com/common/images/vocab/1398.jpg" alt="-"/><span
+                    class="middle">telephone</span></div>
+        </div>
+        <div class="col-xs-4 col-sm-2 card" onclick="flip(15,648,true)">
+            <img class="img-responsive" src="https://www.50languages.com/common/images/50l-card-blank.png"
+                 alt="-"/>
+            <audio preload="auto" id="au_15">
+                <source src="https://www.goethe-verlag.com/book2/_alleima/_mp3/EN/0649.mp3" type="audio/mpeg">
+            </audio>
+            <div class="front" id="fr_15"></div>
+            <div class="back flipped" id="bk_15">
+                <img class="img-responsive center-block"
+                     src="https://www.50languages.com/common/images/vocab/1724.jpg" alt="-"/><span
+                    class="middle">leisure time</span></div>
+        </div>
+        <div class="col-xs-4 col-sm-2 card" onclick="flip(16,1057,true)">
+            <img class="img-responsive" src="https://www.50languages.com/common/images/50l-card-blank.png"
+                 alt="-"/>
+            <audio preload="auto" id="au_16">
+                <source src="https://www.goethe-verlag.com/book2/_alleima/_mp3/EN/1058.mp3" type="audio/mpeg">
+            </audio>
+            <div class="front" id="fr_16"></div>
+            <div class="back flipped" id="bk_16">
+                <img class="img-responsive center-block"
+                     src="https://www.50languages.com/common/images/vocab/1622.jpg" alt="-"/><span
+                    class="middle">sugar</span></div>
+        </div>
+        <div class="col-xs-4 col-sm-2 card" onclick="flip(17,920,true)">
+            <img class="img-responsive" src="https://www.50languages.com/common/images/50l-card-blank.png"
+                 alt="-"/>
+            <audio preload="auto" id="au_17">
+                <source src="https://www.goethe-verlag.com/book2/_alleima/_mp3/UR/0921.mp3" type="audio/mpeg">
+            </audio>
+            <div class="front" id="fr_17"></div>
+            <div class="back flipped" id="bk_17">
+                <img class="img-responsive center-block"
+                     src="https://www.50languages.com/common/images/vocab/1398.jpg" alt="-"/><span
+                    class="middle">‫ٹیلیفون‬<br/><span class="small trlit">ٹy̰ly̰fwn</span></span></div>
+        </div>
+        <div class="col-xs-4 col-sm-2 card" onclick="flip(18,1035,true)">
+            <img class="img-responsive" src="https://www.50languages.com/common/images/50l-card-blank.png"
+                 alt="-"/>
+            <audio preload="auto" id="au_18">
+                <source src="https://www.goethe-verlag.com/book2/_alleima/_mp3/EN/1036.mp3" type="audio/mpeg">
+            </audio>
+            <div class="front" id="fr_18"></div>
+            <div class="back flipped" id="bk_18">
+                <img class="img-responsive center-block"
+                     src="https://www.50languages.com/common/images/vocab/1031.jpg" alt="-"/><span
+                    class="middle">pizza</span></div>
+        </div>
+    </div>
+    <div class="for_print">
+        <table style="margin-bottom: 50px;">
+            <tbody>
+            <tr>
+                <td>
+                    <img src="/common/images/logo-50languages-memo.png" alt="50 languages">
+                </td>
+                <td style="padding-left: 200px;">
+
+                    <br>
+                    <br>
+                    <div>Date:</div>
+                    <div>Score:</div>
+                    <div>Time spent on test:</div>
+                </td>
+                <td style="padding-left: 40px;">
+
+                    <br>
+                    <br>
+                    <div>10/31/2019</div>
+                    <div id="prn_score">0</div>
+                    <div id="prn_time">0:00 sec</div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+<div class="popular_courses lite_bg">
+    <!--================ End Events Area =================-->
+
+
+    <!--================ Start footer Area  =================-->
+    <footer class="footer-area section_gap">
+        <div class="container">
+            <div class="row footer-bottom d-flex justify-content-between">
+                <p class="col-lg-8 col-sm-12 footer-text m-0 text-white" style="padding-top: 10px">Copyright © 2018
+                    All
+                    rights reserved | This
+                    template is
+                    made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#">Hci2019Group09</a></p>
+                <div class="col-lg-4 col-sm-12 footer-social">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                    <a href="#"><i class="fa fa-behance"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--================ End footer Area  =================-->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/stellar.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="js/owl-carousel-thumb.min.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="vendors/counter-up/jquery.counterup.js"></script>
+    <script src="js/mail-script.js"></script>
+    <!--gmaps Js-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+    <script src="js/gmaps.min.js"></script>
+    <script src="js/theme.js"></script>
+</div>
+</body>
+
+</html>
