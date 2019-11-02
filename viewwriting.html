@@ -20,7 +20,8 @@
 
     <!--    chỉnh sửa-->
     <link rel="stylesheet" href="stylecss/index.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/myaccount.css">
+
 
 </head>
 
@@ -67,9 +68,9 @@
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <a class="navbar-brand logo_h" href="index.html">
-<!--                    <img src="img/logo.png" alt="">-->
-                    <img src="img/img_Nhom/logo1.png" height="40" width="140"/>
-                </a>
+                    <!--                    <img src="img/logo.png" alt="">-->
+
+                    <img src="img/img_Nhom/logo1.png" height="40" width="140"/></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -106,6 +107,7 @@
                         <li class="nav-item"><a class="nav-link" href="#">Tests</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Game</a></li>
                         <li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
+                        <li class="nav-item"><a  class="nav-link" href="view.html"><i class="fa fa-user fa-2x"></i></a></li>
                         <li class="nav-item">
                             <a href="#" class="nav-link search" id="search">
                                 <i class="lnr lnr-magnifier"></i>
@@ -117,56 +119,110 @@
         </nav>
     </div>
 </header>
-<div class="container login">
-    <div class="form-structor">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-        <form method="post">
-            <div class="signup">
-                <h2 class="form-title slide-up" id="signup" style="text-decoration: none; margin-top: 30px;margin-left: -25px">Register </h2>
-<!--                <div class="alert alert-danger">-->
+<!-- Tabs -->
+<div class="wrap">
+<section id="tabs">
+    <div class="container">
 
-<!--                </div>-->
-                <div class="form-holder">
+        <div class="row">
+            <div class="col-xs-12 ">
+                <nav>
+                    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link " id="nav-home-tab" href="view.html"
+                           role="tab" aria-controls="nav-home" aria-selected="true">View</a>
+                        <a class="nav-item nav-link " id="nav-profile-tab"  href="account.html"
+                           role="tab" aria-controls="nav-profile" aria-selected="false">Edit</a>
+                        <a class="nav-item nav-link active" id="nav-contact-tab" href="#nav-contact"
+                           role="tab" aria-controls="nav-contact" aria-selected="false">History</a>
 
-                    <input name="email" type="email" class="input" placeholder="Email"/>
-                    <input name="pass" type="password" class="input" placeholder="Password"/>
-                    <input name="repass" type="password" class="input" placeholder="Re-Password"/>
-                    <input name="name" type="text" class="input" placeholder="Name"/>
-                    <input name="phone" type="text" class="input" placeholder="Phone"/>
+                    </div>
+                </nav>
+                <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <section id="tabs" class="tab">
+                            <div class="container">
 
-                    <div class="input">
-                        <input type="radio" name="gender" value="Nam" id="nam"/> <label for="nam">Nam</label>
-                        <input type="radio" name="gender" value="Nữ" id="nu"/> <label for="nu">Nữ</label>
+                                <div class="row">
+                                    <div class="col-xs-12 ">
+                                        <nav>
+                                            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                                <a class="nav-item nav-link " id="nav-home-tab"
+                                                   href="viewlistening.html" role="tab" aria-controls="nav-home"
+                                                   aria-selected="true">Listening</a>
+                                                <a class="nav-item nav-link active" id="nav-profile-tab"
+                                                   href="viewwriting.html" role="tab" aria-controls="nav-profile"
+                                                   aria-selected="false">Writing</a>
 
+                                            </div>
+                                        </nav>
+                                        <div class="tab-content g-1 py-3 px-3 px-sm-0" id="nav-tabContent">
+
+                                            <table class="table">
+                                                <thead class="thead-light">
+                                                <tr>
+                                                    <th scope="col">Tháng</th>
+                                                    <th scope="col">Level</th>
+                                                    <th scope="col">Tổng điểm</th>
+                                                    <th scope="col">BTĐL</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <th scope="row">10/2019</th>
+                                                    <td>0</td>
+                                                    <td>20000</td>
+                                                    <td>20</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">11/2019</th>
+                                                    <td>5</td>
+                                                    <td>55456</td>
+                                                    <td>55</td>
+                                                </tr>
+
+                                                </tbody>
+                                            </table>
+
+
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                     </div>
 
                 </div>
-                <button class="submit-btn">Sign up</button>
-            </div>
-        </form>
-    </div>
-</div>
 
-<div class="popular_courses lite_bg">
-    <footer class="footer-area section_gap">
-        <div class="container">
-            <div class="row footer-bottom d-flex justify-content-between">
-                <p class="col-lg-8 col-sm-12 footer-text m-0 text-white" style="padding-top: 10px">Copyright © 2018 All
-                    rights reserved | This
-                    template is
-                    made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#">Hci2019Group09</a></p>
-                <div class="col-lg-4 col-sm-12 footer-social">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-dribbble"></i></a>
-                    <a href="#"><i class="fa fa-behance"></i></a>
-                </div>
             </div>
         </div>
-    </footer>
+    </div>
+</section>
 </div>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!-- ./Tabs -->
+<footer class="footer-area section_gap">
+    <div class="container">
+        <div class="row footer-bottom d-flex justify-content-between">
+            <p class="col-lg-8 col-sm-12 footer-text m-0 text-white" style="padding-top: 10px">Copyright © 2018 All
+                rights reserved | This
+                template is
+                made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#">Hci2019Group09</a></p>
+            <div class="col-lg-4 col-sm-12 footer-social">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-dribbble"></i></a>
+                <a href="#"><i class="fa fa-behance"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/popper.js"></script>
 <script src="js/bootstrap.min.js"></script>

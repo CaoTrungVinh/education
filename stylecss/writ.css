@@ -1,0 +1,78 @@
+.main_menu{
+    border-bottom: 1px solid #00AEE4;
+}
+#body-writing{
+    width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+}
+#body-writing .home-writing{
+    margin-left: 230px;
+}
+#body-writing #main{
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding-top: 20px;
+    clear: both;
+    overflow: auto;
+}
+#body-writing #main #content{
+    width: 66%;
+    float: left;
+    margin-right: 0px;
+}
+#body-writing #main #content .views-row{
+    width: 100%;
+    overflow: auto;
+    display: inline-block;
+}
+#body-writing #main #content .views-row span{
+    color: #777777;
+}
+#body-writing #main #content .views-row .field-image{
+    width: 40%;
+    height: 163px;
+    float: left;
+}
+#body-writing #main #content .views-row .name-description{
+    width: 60%;
+    height: 163px;
+    float: left;
+    padding-left: 15px;
+}
+#body-writing #main #content .views-row .name-description .views-field-name .field-content-name{
+    color: #00843d;
+    font-family: 'british_council-bold';
+    font-size: 18px;
+}
+#body-writing #main #content .views-row .name-description .views-field-description .field-content{
+    font-size: 15px;
+    color: black;
+}
+
+#body-writing #main .sidebars{
+    float: left;
+    width: 34%;
+    margin-top: 85px;
+}
+#body-writing #main .sidebars .region-sidebar{
+    width: 100%;
+    margin: 0px;
+    padding: 0px 10px;
+}
+#body-writing #main .sidebars .region-sidebar .block-menu-block-3{
+    background: #f4f4f4;
+    padding: 15px;
+}
+#body-writing #main .sidebars .region-sidebar .block-menu-block-3 .listening{
+    display: grid;
+    border-bottom: 1px solid #CCCCCC;
+    margin-bottom: 15px;
+}
+#body-writing #main .sidebars .region-sidebar .block-menu-block-3 .listening .text-block-3{
+    font-size: 18px;
+    color: black;
+    padding-bottom: 5px;
+    font-weight: 100;
+}
