@@ -107,6 +107,7 @@
                         <li class="nav-item"><a class="nav-link" href="#">Tests</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Game</a></li>
                         <li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
+                        <li class="nav-item"><a  class="nav-link" href="view.html"><i class="fa fa-user fa-2x"></i></a></li>
                         <li class="nav-item">
                             <a href="#" class="nav-link search" id="search">
                                 <i class="lnr lnr-magnifier"></i>
@@ -132,64 +133,72 @@
             <div class="col-xs-12 ">
                 <nav>
                     <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                        <a class="nav-item nav-link active" id="nav-home-tab" href="#nav-home"
+                        <a class="nav-item nav-link " id="nav-home-tab" href="view.html"
                            role="tab" aria-controls="nav-home" aria-selected="true">View</a>
-                        <a class="nav-item nav-link" id="nav-profile-tab"  href="account.html"
+                        <a class="nav-item nav-link " id="nav-profile-tab"  href="account.html"
                            role="tab" aria-controls="nav-profile" aria-selected="false">Edit</a>
-                        <a class="nav-item nav-link" id="nav-contact-tab"  href="listening.html"
+                        <a class="nav-item nav-link active" id="nav-contact-tab" href="#nav-contact"
                            role="tab" aria-controls="nav-contact" aria-selected="false">History</a>
 
                     </div>
                 </nav>
                 <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                        <div class="profile">
+                        <section id="tabs" class="tab">
+                            <div class="container">
 
-                            <h3>Account information</h3>
+                                <div class="row">
+                                    <div class="col-xs-12 ">
+                                        <nav>
+                                            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                                <a class="nav-item nav-link " id="nav-home-tab"
+                                                   href="viewlistening.html" role="tab" aria-controls="nav-home"
+                                                   aria-selected="true">Listening</a>
+                                                <a class="nav-item nav-link active" id="nav-profile-tab"
+                                                   href="viewwriting.html" role="tab" aria-controls="nav-profile"
+                                                   aria-selected="false">Writing</a>
 
-                            <dl>
-                                <dt>Given name(s)</dt>
-                                <dd>hhhhh</dd>
-                                <dt>Surname/Family name</dt>
-                                <dd>Huy</dd>
-                                <dt>Your country/territory</dt>
-                                <dd>Uruguay</dd>
-                            </dl>
-                            <h3>History</h3>
+                                            </div>
+                                        </nav>
+                                        <div class="tab-content g-1 py-3 px-3 px-sm-0" id="nav-tabContent">
 
-                            <dl>
-                                <dt>Member for</dt>
-                                <dd>10 min 13 sec</dd>
-                            </dl>
-                        </div>
+                                            <table class="table">
+                                                <thead class="thead-light">
+                                                <tr>
+                                                    <th scope="col">Tháng</th>
+                                                    <th scope="col">Level</th>
+                                                    <th scope="col">Tổng điểm</th>
+                                                    <th scope="col">BTĐL</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <th scope="row">10/2019</th>
+                                                    <td>0</td>
+                                                    <td>20000</td>
+                                                    <td>20</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">11/2019</th>
+                                                    <td>5</td>
+                                                    <td>55456</td>
+                                                    <td>55</td>
+                                                </tr>
+
+                                                </tbody>
+                                            </table>
+
+
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                     </div>
-                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                        Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim
-                        occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit
-                        dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse
-                        consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod
-                        tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non
-                        adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat
-                        ex.
-                    </div>
-                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                        Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim
-                        occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit
-                        dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse
-                        consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod
-                        tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non
-                        adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat
-                        ex.
-                    </div>
-                    <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-                        Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim
-                        occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit
-                        dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse
-                        consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod
-                        tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non
-                        adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat
-                        ex.
-                    </div>
+
                 </div>
 
             </div>
