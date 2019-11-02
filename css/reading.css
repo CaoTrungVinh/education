@@ -2,6 +2,12 @@
     padding: 20px;
 }
 
+.background {
+    background: #f9f9f9;
+    padding-top: 10px;
+    margin-bottom: -40px;
+}
+
 .padd {
     padding-right: 0px;
 }
