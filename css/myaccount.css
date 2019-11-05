@@ -22,16 +22,16 @@ section .section-title {
 #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
     color: #f3f3f3;
     background-color: transparent;
-    border-color: transparent transparent #f3f3f3;
+    border-color: transparent transparent #00FBDC;
     border-bottom: 4px solid !important;
     font-size: 20px;
     font-weight: bold;
 }
 #tabs .nav-tabs .nav-link {
-    border: 1px solid transparent;
+    border: 1px solid #006282;
     border-top-left-radius: .25rem;
     border-top-right-radius: .25rem;
-    color: #eee;
+    color: black;
     width: -1%;
     font-size: 15px;
 }
@@ -49,7 +49,7 @@ section .section-title {
 }
 .password-indicator {
     background-color: #C4C4C4;
-    height: 0.3em;
+    height: 2.3em;
     width: 100%;
 }
 .confirm-parent, .password-parent {
@@ -83,8 +83,8 @@ input[type="submit"].form-submit, button[type="submit"].form-submit {
 
 .wrap{
     height: 550px;
-    background: #3F3F3F;
-    color: #eee;
+    background: white;
+    color: black;
 }
 .g-1{
     overflow: scroll;
