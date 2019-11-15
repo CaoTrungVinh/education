@@ -7,3 +7,6 @@
 .footer-area .footer-bottom {
     margin-top: 0px;
 }
+.dropdown{
+    cursor: pointer;
+}

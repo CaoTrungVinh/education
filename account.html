@@ -21,7 +21,17 @@
     <!--    chỉnh sửa-->
     <link rel="stylesheet" href="stylecss/index.css">
     <link rel="stylesheet" href="css/myaccount.css">
-
+    <style>
+        label {
+            margin-bottom: 0.0em;
+        !important;
+            margin-top: 10px;
+        }
+        .form-select {
+            height: 40px;
+            width: 42%;
+        }
+    </style>
 
 </head>
 
@@ -99,7 +109,17 @@
                         <li class="nav-item"><a class="nav-link" href="tests.html">Tests</a></li>
                         <li class="nav-item"><a class="nav-link" href="games.html">Games</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        <li class="nav-item"><a  class="nav-link" href="view.html"><i class="fa fa-user fa-2x"></i></a></li>
+                        <li class="nav-item"><a class="nav-link" href=""></a>
+                            <div class="dropdown">
+                                <i class="fa fa-user fa-2x dropdown-toggle" id="dropdownMenuButton"
+                                   data-toggle="dropdown" style="font-size: 20px"></i>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="view.html">View</a>
+                                    <a class="dropdown-item" href="account.html">Edit</a>
+                                    <a class="dropdown-item" href="viewlistening.html">History</a>
+                                </div>
+                            </div>
+                        </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link search" id="search">
                                 <i class="lnr lnr-magnifier"></i>
@@ -122,17 +142,7 @@
 
             <div class="row">
                 <div class="col-xs-12 ">
-                    <nav>
-                        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                            <a class="nav-item nav-link " id="nav-home-tab" href="view.html"
-                               role="tab" aria-controls="nav-home" aria-selected="true">View</a>
-                            <a class="nav-item nav-link active" id="nav-profile-tab" data-toggle="tab" href="nav-home"
-                               role="tab" aria-controls="nav-profile" aria-selected="false">Edit</a>
-                            <a class="nav-item nav-link" id="nav-contact-tab" href="viewlistening.html"
-                               role="tab" aria-controls="nav-contact" aria-selected="false">History</a>
 
-                        </div>
-                    </nav>
                     <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
                              aria-labelledby="nav-home-tab">
@@ -141,19 +151,7 @@
 
                                     <div class="row">
                                         <div class="col-xs-12 ">
-                                            <nav>
-                                                <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                                                    <a class="nav-item nav-link active" id="nav-home-tab"
-                                                       data-toggle="tab"
-                                                       href="#nav-home" role="tab" aria-controls="nav-home"
-                                                       aria-selected="true">Account</a>
-                                                    <a class="nav-item nav-link" id="nav-profile-tab"
-                                                       href="accountinformation.html" role="tab"
-                                                       aria-controls="nav-profile"
-                                                       aria-selected="false">Account Information</a>
 
-                                                </div>
-                                            </nav>
                                             <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
                                                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
                                                      aria-labelledby="nav-home-tab">
@@ -173,23 +171,25 @@
                                                                 apostrophes, and underscores.
                                                             </div>
                                                         </div>
-                                                        <div class="form-item form-type-password form-item-current-pass"
+                                                        <div class="form-item form-type-textfield form-item-profile-surname"
                                                              style="position: relative;">
                                                             <div class="formtips-wrapper clear-block"><label
-                                                                    for="edit-current-pass">Current password <a
-                                                                    class="formtip"></a></label></div>
-                                                            <input autocomplete="off" type="password"
-                                                                   id="edit-current-pass" name="current_pass" size="25"
-                                                                   maxlength="128" class="form-text">
+                                                                    for="edit-profile-surname">Surname/Family
+                                                                name <span class="form-required"
+                                                                           title="This field is required.">*</span><a
+                                                                        class="formtip"></a></label></div>
+                                                            <input type="text" id="edit-profile-surname"
+                                                                   name="profile_surname" value="Huy"
+                                                                   size="60"
+                                                                   maxlength="255"
+                                                                   class="form-text required">
                                                             <div class="description formtips-processed"
-                                                                 style="display: none;">Enter your current password to
-                                                                change the <em class="placeholder">Email address</em> or
-                                                                <em class="placeholder">Password</em>. <a
-                                                                        href="/user/password"
-                                                                        title="Request new password via e-mail.">Request
-                                                                    new password</a>.
+                                                                 style="display: none;"> The content of this
+                                                                field is kept private and will not be shown
+                                                                publicly.
                                                             </div>
                                                         </div>
+
                                                         <div class="form-item form-type-textfield form-item-mail"
                                                              style="position: relative;">
                                                             <div class="formtips-wrapper clear-block"><label
@@ -208,25 +208,44 @@
                                                                 newsletters.
                                                             </div>
                                                         </div>
+                                                        <div class="form-item form-type-select form-item-profile-country"
+                                                             style="position: relative;">
+                                                            <div class="formtips-wrapper clear-block"><label
+                                                                    for="edit-profile-country">Your
+                                                                country/territory <span
+                                                                        class="form-required"
+                                                                        title="This field is required.">*</span><a
+                                                                        class="formtip"></a></label></div>
+                                                            <select id="edit-profile-country"
+                                                                    name="profile_country"
+                                                                    class="form-select required">
+                                                                <option value="0">- Select -</option>
+                                                                <option value="Afghanistan">Afghanistan
+                                                                </option>
+                                                                <option value="Albania">Albania</option>
+
+                                                                </option>
+                                                                <option value="Antigua and Barbuda">Antigua
+                                                                    and
+                                                                    Barbuda
+
+                                                            </select>
+                                                            <div class="description formtips-processed"
+                                                                 style="display: none;">Please choose your
+                                                                location from the list.
+
+                                                            </div>
+                                                        </div>
                                                         <div class="form-item form-type-password-confirm form-item-pass"
                                                              style="position: relative;">
                                                             <div class="form-item form-type-password form-item-pass-pass1 password-parent">
-                                                                <div class="password-strength">
-                                                                    <div class="password-strength-text"
-                                                                         aria-live="assertive"></div>
-                                                                    <div class="password-strength-title">Password
-                                                                        quality:
-                                                                    </div>
-                                                                    <div class="password-indicator">
-                                                                        <div class="indicator"></div>
-                                                                    </div>
-                                                                </div>
+
                                                                 <div class="formtips-wrapper clear-block"><label
                                                                         for="edit-pass-pass1">Password <a
                                                                         class="formtip"></a></label></div>
                                                                 <input class="password-field form-text password-processed"
                                                                        type="password" id="edit-pass-pass1"
-                                                                       name="pass[pass1]" size="25" maxlength="128">
+                                                                       name="pass[pass1]" size="60" maxlength="128">
                                                             </div>
                                                             <div class="form-item form-type-password form-item-pass-pass2 confirm-parent">
                                                                 <div class="password-confirm">Passwords match:
@@ -234,7 +253,7 @@
                                                                 <label for="edit-pass-pass2">Confirm password </label>
                                                                 <input class="password-confirm form-text"
                                                                        type="password" id="edit-pass-pass2"
-                                                                       name="pass[pass2]" size="25" maxlength="128">
+                                                                       name="pass[pass2]" size="60" maxlength="128">
                                                             </div>
                                                             <div class="password-suggestions description"
                                                                  style="display: none;"></div>
@@ -256,7 +275,27 @@
                             </section>
                         </div>
 
-                    </div>
+
+
+                            <div class="form-item form-type-textfield form-item-profile-givennames"
+                                 style="position: relative;">
+
+                                <div class="description formtips-processed"
+                                     style="display: none;"> The content of this
+                                    field is kept private and will not be shown
+                                    publicly.
+                                </div>
+                            </div>
+
+
+                            </fieldset>
+                            <div class="form-actions form-wrapper" id="edit-actions">
+                                <input
+                                        type="submit" id="edit-submit" name="op"
+                                        value="Save"
+                                        class="form-submit"></div>
+                        </div>
+
 
                 </div>
             </div>
