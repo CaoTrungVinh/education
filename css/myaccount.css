@@ -1,5 +1,7 @@
 /* Tabs*/
-
+th{
+    font-weight: normal;
+}
 section {
     padding: 10px 0;
 }
@@ -31,7 +33,7 @@ section .section-title {
     border: 1px solid #006282;
     border-top-left-radius: .25rem;
     border-top-right-radius: .25rem;
-    color: black;
+    color: #00aee4;
     width: -1%;
     font-size: 15px;
 }
@@ -82,8 +84,8 @@ input[type="submit"].form-submit, button[type="submit"].form-submit {
 
 
 .wrap{
-    height: 1000px;
-    background: white;
+    height: 625px;
+    background: #F9F9F9;
     color: black;
 }
 .g-1{
