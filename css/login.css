@@ -16,6 +16,7 @@
 .login {
     display: flex;
     justify-content: center;
+    padding-top: 10%;
 }
 
 .form-structor h2 {
