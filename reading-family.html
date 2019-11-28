@@ -33,44 +33,10 @@
 
 <body>
 <!--================ Start Header Menu Area =================-->
-<header class="header_area">
-    <div class="header-top">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-sm-6 col-4 header-top-left">
-                    <a href="tel:+9530123654896">
-                        <span class="lnr lnr-phone"></span>
-                        <span class="text">
-								<span class="text">(+84) 3012 3654 896</span>
-							</span>
-                    </a>
-                    <a href="mailto:support@colorlib.com">
-                        <span class="lnr lnr-envelope"></span>
-                        <span class="text">
-								<span class="text">hci2019Group09@hcmuaf.edu.vn</span>
-							</span>
-                    </a>
-                </div>
-                <div class="col-lg-6 col-sm-6 col-8 header-top-right">
-                    <a href="login.html" class="text-uppercase">Login</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
+<div class="header_area" style="position: fixed; background: white">
     <div class="main_menu">
-        <div class="search_input" id="search_input_box">
-            <div class="container">
-                <form class="d-flex justify-content-between" method="" action="">
-                    <input type="text" class="form-control" id="search_input" placeholder="Search Here">
-                    <button type="submit" class="btn"></button>
-                    <span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
-                </form>
-            </div>
-        </div>
-
         <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container">
+            <div class="container" style="max-width: 1265px">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <a class="navbar-brand logo_h" href="index.html">
                     <!--                    <img src="img/logo.png" alt="">-->
@@ -86,6 +52,14 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                     <ul class="nav navbar-nav menu_nav ml-auto">
+                        <li class="nav-item" style="margin-right: 60px">
+                            <a href="#" class="nav-link search" id="search">
+                                <div style="width: 375px; height: 30px; margin-top: 25px; display: flex; border: 1px solid #00AEE4; border-radius: 5px">
+                                    <input type="text" placeholder="Search" style="width: 85%; height: 100%; margin-left: 20px; border: 0px; border-right: 1px solid #00AEE4; outline: none">
+                                    <i class="lnr lnr-magnifier" style="font-size: 15px; padding: 7px 20px"></i>
+                                </div>
+                            </a>
+                        </li>
                         <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item submenu dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
@@ -104,19 +78,23 @@
                         <li class="nav-item"><a class="nav-link" href="tests.html">Tests</a></li>
                         <li class="nav-item"><a class="nav-link" href="games.html">Games</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="view.html"><i class="fa fa-user fa-2x"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link search" id="search">
-                                <i class="lnr lnr-magnifier"></i>
-                            </a>
+                        <li class="nav-item"><a class="nav-link" href="material-kit-master/index.html">Style Guide</a></li>
+                        <li class="nav-item"><a class="nav-link" href=""></a>
+                            <div class="dropdown">
+                                <i class="fa fa-user fa-2x dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" style="font-size: 20px"></i>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="view.html">View</a>
+                                    <a class="dropdown-item" href="account.html">Edit</a>
+                                    <a class="dropdown-item" href="viewlistening.html">History</a>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </div>
-</header>
+</div>
 
 <div class="row background">
     <div class="container">
@@ -130,13 +108,13 @@
                             </div>
                         </div>
                         <!--                    image-->
-<!--                        <div class="field field-name-field-image field-type-image field-label-hidden">-->
-<!--                            <div class="field-items">-->
-<!--                                <div class="field-item even"><img-->
-<!--                                        src="https://learnenglish.britishcouncil.org/sites/podcasts/files/styles/article/public/RS7865_ThinkstockPhotos-498708046-hig.jpg?itok=WOCBF2_0"-->
-<!--                                        width="655" height="368" alt=""></div>-->
-<!--                            </div>-->
-<!--                        </div>-->
+                        <!--                        <div class="field field-name-field-image field-type-image field-label-hidden">-->
+                        <!--                            <div class="field-items">-->
+                        <!--                                <div class="field-item even"><img-->
+                        <!--                                        src="https://learnenglish.britishcouncil.org/sites/podcasts/files/styles/article/public/RS7865_ThinkstockPhotos-498708046-hig.jpg?itok=WOCBF2_0"-->
+                        <!--                                        width="655" height="368" alt=""></div>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
 
                         <div class="field field-name-field-instructions field-type-text-long field-label-hidden">
                             <div class="field-items">
@@ -251,7 +229,8 @@
                                                                 học đó. Ông Johnson là một giáo viên tồi. Ông ta làm cho
                                                                 Toán khó hiểu. Ông cũng hét lên với sinh viên nhiều lần.
                                                                 Các sinh viên muốn cô Smith trở lại.
-                                                                Cô Smith là một giáo viên tuyệt vời. Cô ấy khiến môn Toán
+                                                                Cô Smith là một giáo viên tuyệt vời. Cô ấy khiến môn
+                                                                Toán
                                                                 dễ hơn. Cô cũng dạy học sinh của mình cách trở thành
                                                                 người tuyệt vời. Một ngày, cô Smith thấy mệt. Một giáo
                                                                 viên khác thay thế. Thay vào đó, ông Johnson sẽ dạy lớp
@@ -276,23 +255,23 @@
                                 <h2>Answer the question:</h2>
                                 <p>1.Do you have any brothers or sisters?</p>
                                 <div>
-                                    <input style=" padding: 10px 220px">
+                                    <input style=" padding: 5px 220px">
                                 </div>
                                 <p>2. Could you tell me about your family?</p>
                                 <div>
-                                    <input style=" padding: 10px 220px">
+                                    <input style=" padding: 5px 220px">
                                 </div>
                                 <p>3.How many people are there in your family?</p>
                                 <div>
-                                    <input style=" padding: 10px 220px">
+                                    <input style=" padding: 5px 220px">
                                 </div>
                                 <p>4.How's the family? How's everybody doing?</p>
                                 <div>
-                                    <input style=" padding: 10px 220px">
+                                    <input style=" padding: 5px 220px">
                                 </div>
                                 <p>5.Do you want to see pictures of my family? </p>
                                 <div>
-                                    <input style=" padding: 10px 220px">
+                                    <input style=" padding: 5px 220px;margin-bottom: 20px">
                                 </div>
                             </div>
 
@@ -514,17 +493,26 @@
             <div class="col-md-4">
                 <aside class="sidebars">
                     <section class="region region-sidebar-second column sidebar">
+
+
                         <div id="block-menu-menu-online-courses" class="block block-menu course_two first odd"
                              role="navigation" style="width: 340px">
 
-                            <h2 class="block__title block-title"><span class="courses-title-wrapper">Courses</span>
+                            <h2 class="block__title block-title"><span class="courses-title-wrapper">Theme</span>
                             </h2>
 
                             <ul class="menu">
-                                <li class="menu__item is-leaf first leaf"><a href="/courses/online" class="menu__link">Find
-                                    an English course online</a></li>
-                                <li class="menu__item is-leaf last leaf"><a href="/courses" class="menu__link">Find an
-                                    English course near you</a></li>
+                                <li class="menu__item is-leaf first leaf"><a href="b1/b1001.htm">1. Morning</a><br>
+                                <li class="menu__item is-leaf last leaf"><a href="b1/b1002.htm">2. First Day of
+                                    School</a><br></li>
+                                <li class="menu__item is-leaf last leaf"><a href="b1/b1002.htm">3. Water on the
+                                    Floor</a><br></li>
+                                <li class="menu__item is-leaf last leaf"><a href="b1/b1002.htm">4. Babysitting</a><br>
+                                </li>
+                                <li class="menu__item is-leaf last leaf"><a href="b1/b1002.htm">5. A Doctor</a><br></li>
+                                <li class="menu__item is-leaf last leaf"><a href="b1/b1002.htm">6. Twins</a><br></li>
+                                <li class="menu__item is-leaf last leaf"><a href="b1/b1002.htm">7. Reading</a><br></li>
+                                <li class="menu__item is-leaf last leaf"><a href="b1/b1002.htm">8..69.</a><br></li>
                             </ul>
                         </div>
                         <div id="block-views-taxonomy-blocks-block-14" class="block block-views even"
@@ -567,6 +555,7 @@
                                     for newsletter</a></li>
                             </ul>
                         </div>
+
                     </section>
                 </aside>
             </div>
@@ -626,7 +615,7 @@
             if (panel.style.maxHeight) {
                 panel.style.maxHeight = null;
             } else {
-                panel.style.maxHeight = panel.scrollHeight + "px";
+                panel.style.maxHeight = panel.scrollHeight + 100 + "px";
             }
         });
     }

@@ -87,7 +87,9 @@ a:active, a:hover {
 }
 
 p, pre {
-    margin: 1.5em 0;
+    /*margin: 1.5em 0;*/
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 blockquote {
@@ -7277,7 +7279,7 @@ html:lang(zh-hans) body.section-courses #content .country-select-block h2 + p {
 .panel {
     border: none;
     background-color: #ebeff0;
-    border-radius: 0;
+    border-radius: 0 0 10px 10px;
     /*margin: 0 -15px 15px;*/
     margin-bottom: 15px;
     -webkit-box-shadow: none;
