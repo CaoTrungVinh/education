@@ -26,10 +26,18 @@
     <style>
 
 
-        th{
+        th {
             font-weight: normal;
         }
 
+    </style>
+    <style>
+        .dropdown-item {
+            margin-left: 20px;
+            border-bottom: 1px solid #f9f9f9;
+            padding-left: 10px;
+            width: 70%;
+        }
     </style>
 </head>
 
@@ -39,7 +47,7 @@
 <div class="header_area">
     <div class="main_menu">
         <nav class="navbar navbar-expand-lg navbar-light">
-                 <div class="container">
+            <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <a class="navbar-brand logo_h" href="index.html">
                     <!--                    <img src="img/logo.png" alt="">-->
@@ -51,7 +59,8 @@
 
                         <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Study</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" aria-expanded="false">Study</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item"><a class="nav-link" href="vocabulary.html">Vocabulary</a></li>
                                 <li class="nav-item"><a class="nav-link" href="paragraph.html">Paragraph</a></li>
@@ -65,22 +74,25 @@
                         <li class="nav-item"><a class="nav-link" href="tests.html">Tests</a></li>
                         <li class="nav-item"><a class="nav-link" href="games.html">Games</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                     <li class="nav-item"><a class="nav-link" href="style-guide.html">Style Guide</a></li>      <li class="nav-item"><a class="nav-link" href=""></a>
+<!--                        <li class="nav-item"><a class="nav-link" href="style-guide.html">Style Guide</a></li>-->
+                        <li class="nav-item"><a class="nav-link" href=""></a>
                             <div class="dropdown">
-                                <i class="fa fa-user fa-2x dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" style="font-size: 20px"></i>
+                                <i class="fa fa-user fa-2x dropdown-toggle" id="dropdownMenuButton"
+                                   data-toggle="dropdown" style="font-size: 20px"></i>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="view.html">View</a>
+                                    <!--                                    <a class="dropdown-item" href="view.html">View</a>-->
                                     <a class="dropdown-item" href="account.html">Edit</a>
                                     <a class="dropdown-item" href="viewlistening.html">History</a>
                                 </div>
                             </div>
                         </li>
-                     
+
 
                         <li class="nav-item">
                             <a href="#" class="nav-link search" id="search">
                                 <div style="width: 90%; height: 30px; margin-top: 25px; display: flex; border: 1px solid #00AEE4; border-radius: 5px">
-                                    <input type="text" placeholder="Search" style="width: 85%; height: 100%; margin-left: 20px; border: 0px; border-right: 1px solid #00AEE4; outline: none">
+                                    <input type="text" placeholder="Search"
+                                           style="width: 85%; height: 100%; margin-left: 20px; border: 0px; border-right: 1px solid #00AEE4; outline: none">
                                     <i class="lnr lnr-magnifier" style="font-size: 15px; padding: 7px 20px"></i>
                                 </div>
                             </a>
@@ -98,75 +110,74 @@
 
 <!-- Tabs -->
 <div class="wrap">
-<section id="tabs">
-    <div class="container">
+    <section id="tabs">
+        <div class="container">
 
-        <div class="row">
-            <div class="col-xs-12 ">
+            <div class="row">
+                <div class="col-xs-12 ">
 
-                <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                        <section id="tabs" class="tab">
-                            <div class="container">
+                    <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                             aria-labelledby="nav-home-tab">
+                            <section id="tabs" class="tab">
+                                <div class="container">
 
-                                <div class="row">
-                                    <div class="col-xs-12 ">
-                                        <nav>
-                                            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                                                <a class="nav-item nav-link " id="nav-home-tab"
-                                                   href="viewlistening.html" role="tab" aria-controls="nav-home"
-                                                   aria-selected="true">Listening</a>
-                                                <a class="nav-item nav-link active" id="nav-profile-tab"
-                                                   href="viewwriting.html" role="tab" aria-controls="nav-profile"
-                                                   aria-selected="false">Writing</a>
+                                    <div class="row">
+                                        <div class="col-xs-12 ">
+                                            <nav>
+                                                <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                                    <a class="nav-item nav-link " id="nav-home-tab"
+                                                       href="viewlistening.html" role="tab" aria-controls="nav-home"
+                                                       aria-selected="true">Listening</a>
+                                                    <a class="nav-item nav-link active" id="nav-profile-tab"
+                                                       href="viewwriting.html" role="tab" aria-controls="nav-profile"
+                                                       aria-selected="false">Writing</a>
+
+                                                </div>
+                                            </nav>
+                                            <div class="tab-content g-1 py-3 px-3 px-sm-0" id="nav-tabContent">
+
+                                                <table class="table">
+                                                    <thead class="thead-light">
+                                                    <tr>
+                                                        <th scope="col">Tháng</th>
+                                                        <th scope="col">Level</th>
+                                                        <th scope="col">Tổng điểm</th>
+                                                        <th scope="col">BTĐL</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <th scope="row">10/2019</th>
+                                                        <td>0</td>
+                                                        <td>20000</td>
+                                                        <td>20</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">11/2019</th>
+                                                        <td>5</td>
+                                                        <td>55456</td>
+                                                        <td>55</td>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+
 
                                             </div>
-                                        </nav>
-                                        <div class="tab-content g-1 py-3 px-3 px-sm-0" id="nav-tabContent">
-
-                                            <table class="table">
-                                                <thead class="thead-light">
-                                                <tr>
-                                                    <th scope="col">Tháng</th>
-                                                    <th scope="col">Level</th>
-                                                    <th scope="col">Tổng điểm</th>
-                                                    <th scope="col">BTĐL</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <th scope="row">10/2019</th>
-                                                    <td>0</td>
-                                                    <td>20000</td>
-                                                    <td>20</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">11/2019</th>
-                                                    <td>5</td>
-                                                    <td>55456</td>
-                                                    <td>55</td>
-                                                </tr>
-
-                                                </tbody>
-                                            </table>
-
-
-
 
                                         </div>
-
                                     </div>
                                 </div>
-                            </div>
-                        </section>
+                            </section>
+                        </div>
+
                     </div>
 
                 </div>
-
             </div>
         </div>
-    </div>
-</section>
+    </section>
 </div>
 <!-- ./Tabs -->
 <footer class="footer-area section_gap">
