@@ -37,6 +37,7 @@
     position: relative;
     overflow: hidden;
     border: 1px solid beige;
+    margin-bottom: 50px;
 }
 
 .form-structor::after {
